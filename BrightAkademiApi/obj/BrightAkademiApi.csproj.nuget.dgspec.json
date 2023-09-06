@@ -1,0 +1,361 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Git\\AspNet-Core-Web-API-React.js\\BrightAkademiApi\\BrightAkademiApi.csproj": {}
+  },
+  "projects": {
+    "C:\\Git\\AspNet-Core-Web-API-React.js\\BrightAkademiApi.Business\\BrightAkademiApi.Business.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Git\\AspNet-Core-Web-API-React.js\\BrightAkademiApi.Business\\BrightAkademiApi.Business.csproj",
+        "projectName": "BrightAkademiApi.Business",
+        "projectPath": "C:\\Git\\AspNet-Core-Web-API-React.js\\BrightAkademiApi.Business\\BrightAkademiApi.Business.csproj",
+        "packagesPath": "C:\\Users\\onrus\\.nuget\\packages\\",
+        "outputPath": "C:\\Git\\AspNet-Core-Web-API-React.js\\BrightAkademiApi.Business\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\onrus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Git\\AspNet-Core-Web-API-React.js\\BrightAkademiApi.Data\\BrightAkademiApi.Data.csproj": {
+                "projectPath": "C:\\Git\\AspNet-Core-Web-API-React.js\\BrightAkademiApi.Data\\BrightAkademiApi.Data.csproj"
+              },
+              "C:\\Git\\AspNet-Core-Web-API-React.js\\BrightAkademiApi.Shared\\BrightAkademiApi.Shared.csproj": {
+                "projectPath": "C:\\Git\\AspNet-Core-Web-API-React.js\\BrightAkademiApi.Shared\\BrightAkademiApi.Shared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Git\\AspNet-Core-Web-API-React.js\\BrightAkademiApi.Data\\BrightAkademiApi.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Git\\AspNet-Core-Web-API-React.js\\BrightAkademiApi.Data\\BrightAkademiApi.Data.csproj",
+        "projectName": "BrightAkademiApi.Data",
+        "projectPath": "C:\\Git\\AspNet-Core-Web-API-React.js\\BrightAkademiApi.Data\\BrightAkademiApi.Data.csproj",
+        "packagesPath": "C:\\Users\\onrus\\.nuget\\packages\\",
+        "outputPath": "C:\\Git\\AspNet-Core-Web-API-React.js\\BrightAkademiApi.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\onrus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Git\\AspNet-Core-Web-API-React.js\\BrightAkademiApi.Entity\\BrightAkademiApi.Entity.csproj": {
+                "projectPath": "C:\\Git\\AspNet-Core-Web-API-React.js\\BrightAkademiApi.Entity\\BrightAkademiApi.Entity.csproj"
+              },
+              "C:\\Git\\AspNet-Core-Web-API-React.js\\BrightAkademiApi.Shared\\BrightAkademiApi.Shared.csproj": {
+                "projectPath": "C:\\Git\\AspNet-Core-Web-API-React.js\\BrightAkademiApi.Shared\\BrightAkademiApi.Shared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[7.0.10, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Git\\AspNet-Core-Web-API-React.js\\BrightAkademiApi.Entity\\BrightAkademiApi.Entity.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Git\\AspNet-Core-Web-API-React.js\\BrightAkademiApi.Entity\\BrightAkademiApi.Entity.csproj",
+        "projectName": "BrightAkademiApi.Entity",
+        "projectPath": "C:\\Git\\AspNet-Core-Web-API-React.js\\BrightAkademiApi.Entity\\BrightAkademiApi.Entity.csproj",
+        "packagesPath": "C:\\Users\\onrus\\.nuget\\packages\\",
+        "outputPath": "C:\\Git\\AspNet-Core-Web-API-React.js\\BrightAkademiApi.Entity\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\onrus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.10, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Git\\AspNet-Core-Web-API-React.js\\BrightAkademiApi.Shared\\BrightAkademiApi.Shared.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Git\\AspNet-Core-Web-API-React.js\\BrightAkademiApi.Shared\\BrightAkademiApi.Shared.csproj",
+        "projectName": "BrightAkademiApi.Shared",
+        "projectPath": "C:\\Git\\AspNet-Core-Web-API-React.js\\BrightAkademiApi.Shared\\BrightAkademiApi.Shared.csproj",
+        "packagesPath": "C:\\Users\\onrus\\.nuget\\packages\\",
+        "outputPath": "C:\\Git\\AspNet-Core-Web-API-React.js\\BrightAkademiApi.Shared\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\onrus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Git\\AspNet-Core-Web-API-React.js\\BrightAkademiApi\\BrightAkademiApi.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Git\\AspNet-Core-Web-API-React.js\\BrightAkademiApi\\BrightAkademiApi.csproj",
+        "projectName": "BrightAkademiApi",
+        "projectPath": "C:\\Git\\AspNet-Core-Web-API-React.js\\BrightAkademiApi\\BrightAkademiApi.csproj",
+        "packagesPath": "C:\\Users\\onrus\\.nuget\\packages\\",
+        "outputPath": "C:\\Git\\AspNet-Core-Web-API-React.js\\BrightAkademiApi\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\onrus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Git\\AspNet-Core-Web-API-React.js\\BrightAkademiApi.Business\\BrightAkademiApi.Business.csproj": {
+                "projectPath": "C:\\Git\\AspNet-Core-Web-API-React.js\\BrightAkademiApi.Business\\BrightAkademiApi.Business.csproj"
+              },
+              "C:\\Git\\AspNet-Core-Web-API-React.js\\BrightAkademiApi.Shared\\BrightAkademiApi.Shared.csproj": {
+                "projectPath": "C:\\Git\\AspNet-Core-Web-API-React.js\\BrightAkademiApi.Shared\\BrightAkademiApi.Shared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.10, )"
+            },
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[7.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.10, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.5.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
