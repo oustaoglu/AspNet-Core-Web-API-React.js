@@ -13,6 +13,7 @@ namespace BrightAkademiApi.Entity.Concrete
         public string Name { get; set; }
         public string TotalTime { get; set; }
         public string Time { get; set; }
+        public decimal Price { get; set; }
         public DateTime Start { get; set; }
         public DateTime End { get; set; }
         public bool IsHome { get; set; }
