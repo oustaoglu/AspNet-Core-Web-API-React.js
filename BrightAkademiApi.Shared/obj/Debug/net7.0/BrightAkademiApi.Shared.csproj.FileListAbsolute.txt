@@ -1,0 +1,12 @@
+C:\Git\AspNet-Core-Web-API-React.js\BrightAkademiApi.Shared\bin\Debug\net7.0\BrightAkademiApi.Shared.deps.json
+C:\Git\AspNet-Core-Web-API-React.js\BrightAkademiApi.Shared\bin\Debug\net7.0\BrightAkademiApi.Shared.dll
+C:\Git\AspNet-Core-Web-API-React.js\BrightAkademiApi.Shared\bin\Debug\net7.0\BrightAkademiApi.Shared.pdb
+C:\Git\AspNet-Core-Web-API-React.js\BrightAkademiApi.Shared\obj\Debug\net7.0\BrightAkademiApi.Shared.csproj.AssemblyReference.cache
+C:\Git\AspNet-Core-Web-API-React.js\BrightAkademiApi.Shared\obj\Debug\net7.0\BrightAkademiApi.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Git\AspNet-Core-Web-API-React.js\BrightAkademiApi.Shared\obj\Debug\net7.0\BrightAkademiApi.Shared.AssemblyInfoInputs.cache
+C:\Git\AspNet-Core-Web-API-React.js\BrightAkademiApi.Shared\obj\Debug\net7.0\BrightAkademiApi.Shared.AssemblyInfo.cs
+C:\Git\AspNet-Core-Web-API-React.js\BrightAkademiApi.Shared\obj\Debug\net7.0\BrightAkademiApi.Shared.csproj.CoreCompileInputs.cache
+C:\Git\AspNet-Core-Web-API-React.js\BrightAkademiApi.Shared\obj\Debug\net7.0\BrightAkademiApi.Shared.dll
+C:\Git\AspNet-Core-Web-API-React.js\BrightAkademiApi.Shared\obj\Debug\net7.0\refint\BrightAkademiApi.Shared.dll
+C:\Git\AspNet-Core-Web-API-React.js\BrightAkademiApi.Shared\obj\Debug\net7.0\BrightAkademiApi.Shared.pdb
+C:\Git\AspNet-Core-Web-API-React.js\BrightAkademiApi.Shared\obj\Debug\net7.0\ref\BrightAkademiApi.Shared.dll
