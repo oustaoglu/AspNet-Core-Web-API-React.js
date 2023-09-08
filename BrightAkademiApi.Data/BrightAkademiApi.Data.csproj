@@ -3,16 +3,12 @@
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\BrightAkademiApi.Entity\BrightAkademiApi.Entity.csproj" />
     <ProjectReference Include="..\BrightAkademiApi.Shared\BrightAkademiApi.Shared.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Abstract\" />
   </ItemGroup>
 
   <ItemGroup>
