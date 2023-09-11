@@ -40,8 +40,8 @@ namespace BrightAkademiApi.Data.Concrete.EFCore.Configs
                    Id = 1,
                    FirstName = "Onur",
                    LastName = "Ustaoğlu",
-                   Education = "",
-                   Url = "",
+                   Education = ".NET (.NET Core, MVC, Web API)",
+                   Url = "onur-ustaoglu",
                    PhotoUrl = "1.png",
                },
                new Trainee
@@ -49,8 +49,8 @@ namespace BrightAkademiApi.Data.Concrete.EFCore.Configs
                    Id = 2,
                    FirstName = "Serkan",
                    LastName = "Selek",
-                   Education = "",
-                   Url = "",
+                   Education = "Java (Spring, Java SE, Java EE)",
+                   Url = "serkan-selek",
                    PhotoUrl = "1.png",
                },
                new Trainee
@@ -58,8 +58,8 @@ namespace BrightAkademiApi.Data.Concrete.EFCore.Configs
                    Id = 3,
                    FirstName = "Furkan",
                    LastName = "Yüksel",
-                   Education = "",
-                   Url = "",
+                   Education = "Python",
+                   Url = "furkan-yuksel",
                    PhotoUrl = "1.png",
                },
                new Trainee
@@ -67,8 +67,8 @@ namespace BrightAkademiApi.Data.Concrete.EFCore.Configs
                    Id = 4,
                    FirstName = "Ali",
                    LastName = "Turan",
-                   Education = "",
-                   Url = "",
+                   Education = "JavaScript",
+                   Url = "ali-turan",
                    PhotoUrl = "1.png",
                },
                new Trainee
@@ -76,8 +76,8 @@ namespace BrightAkademiApi.Data.Concrete.EFCore.Configs
                    Id = 5,
                    FirstName = "Mert",
                    LastName = "Tutkun",
-                   Education = "",
-                   Url = "",
+                   Education = "C/C++",
+                   Url = "mert-tutkun",
                    PhotoUrl = "1.png",
                },
                new Trainee
@@ -85,8 +85,8 @@ namespace BrightAkademiApi.Data.Concrete.EFCore.Configs
                    Id = 6,
                    FirstName = "Alim",
                    LastName = "Yalçınkaya",
-                   Education = "",
-                   Url = "",
+                   Education = "iOS & Android",
+                   Url = "alim-yalcinkaya",
                    PhotoUrl = "1.png",
                },
                new Trainee
@@ -94,8 +94,8 @@ namespace BrightAkademiApi.Data.Concrete.EFCore.Configs
                    Id = 7,
                    FirstName = "Uğurcan",
                    LastName = "Çildiz",
-                   Education = "",
-                   Url = "",
+                   Education = "Node.js",
+                   Url = "ugurcan-cildiz",
                    PhotoUrl = "1.png",
                },
                new Trainee
@@ -103,8 +103,8 @@ namespace BrightAkademiApi.Data.Concrete.EFCore.Configs
                    Id = 8,
                    FirstName = "Rıdvan",
                    LastName = "Karakaya",
-                   Education = "",
-                   Url = "",
+                   Education = "React",
+                   Url = "rıdvan-karakaya",
                    PhotoUrl = "1.png",
                });
         }

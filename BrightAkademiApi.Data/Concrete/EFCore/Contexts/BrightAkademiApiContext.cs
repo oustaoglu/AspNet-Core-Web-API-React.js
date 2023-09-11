@@ -28,6 +28,5 @@ namespace BrightAkademiApi.Data.Concrete.EFCore.Contexts
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(CourseConfig).Assembly);
             base.OnModelCreating(modelBuilder);
         }
-
     }
 }

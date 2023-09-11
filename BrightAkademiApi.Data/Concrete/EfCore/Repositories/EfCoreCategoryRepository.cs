@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BrightAkademiApi.Data.Concrete.EfCore.Repositories
 {
-    public class EfCoreCategoryRepository
+    public class EfCoreCategoryRepository : EfCoreGenericRepository<Category>, ICategoryRepository
     {
     }
 }
