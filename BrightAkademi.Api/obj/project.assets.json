@@ -2191,9 +2191,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Git\\AspNet-Core-Web-API-React.js\\BrightAkademiApi\\BrightAkademiApi.csproj",
-      "projectName": "BrightAkademiApi",
-      "projectPath": "C:\\Git\\AspNet-Core-Web-API-React.js\\BrightAkademiApi\\BrightAkademiApi.csproj",
+      "projectUniqueName": "C:\\Git\\AspNet-Core-Web-API-React.js\\BrightAkademiApi\\BrightAkademi.Api.csproj",
+      "projectName": "BrightAkademi.Api",
+      "projectPath": "C:\\Git\\AspNet-Core-Web-API-React.js\\BrightAkademiApi\\BrightAkademi.Api.csproj",
       "packagesPath": "C:\\Users\\onrus\\.nuget\\packages\\",
       "outputPath": "C:\\Git\\AspNet-Core-Web-API-React.js\\BrightAkademiApi\\obj\\",
       "projectStyle": "PackageReference",

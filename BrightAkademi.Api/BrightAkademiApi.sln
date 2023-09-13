@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34003.232
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrightAkademiApi", "BrightAkademiApi.csproj", "{EACA8AC0-FAC0-4254-816B-D40816881A45}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BrightAkademi.Api", "BrightAkademi.Api.csproj", "{EACA8AC0-FAC0-4254-816B-D40816881A45}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrightAkademiApi.Business", "..\BrightAkademiApi.Business\BrightAkademiApi.Business.csproj", "{F8238A14-943A-4E8C-95B1-6765C2BEEAF5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BrightAkademiApi.Business", "..\BrightAkademiApi.Business\BrightAkademiApi.Business.csproj", "{F8238A14-943A-4E8C-95B1-6765C2BEEAF5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrightAkademiApi.Data", "..\BrightAkademiApi.Data\BrightAkademiApi.Data.csproj", "{AD17DF5E-D73D-46E8-8B21-6721AFDB2FC0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BrightAkademiApi.Data", "..\BrightAkademiApi.Data\BrightAkademiApi.Data.csproj", "{AD17DF5E-D73D-46E8-8B21-6721AFDB2FC0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrightAkademiApi.Entity", "..\BrightAkademiApi.Entity\BrightAkademiApi.Entity.csproj", "{C90AC69E-1220-4075-B0DE-B7FBD13B6E71}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BrightAkademiApi.Entity", "..\BrightAkademiApi.Entity\BrightAkademiApi.Entity.csproj", "{C90AC69E-1220-4075-B0DE-B7FBD13B6E71}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrightAkademiApi.Shared", "..\BrightAkademiApi.Shared\BrightAkademiApi.Shared.csproj", "{32AFCD6F-7206-4B64-85E0-3D066BD1554C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BrightAkademiApi.Shared", "..\BrightAkademiApi.Shared\BrightAkademiApi.Shared.csproj", "{32AFCD6F-7206-4B64-85E0-3D066BD1554C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
