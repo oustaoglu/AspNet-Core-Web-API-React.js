@@ -1,4 +1,7 @@
-﻿using BrightAkademiApi.Business.Abstract;
+﻿using AutoMapper;
+using BrightAkademiApi.Business.Abstract;
+using BrightAkademiApi.Data.Abstract;
+using BrightAkademiApi.Entity.Concrete;
 using BrightAkademiApi.Shared.DTOs;
 using BrightAkademiApi.Shared.ResponseDTOs;
 using System;
@@ -11,29 +14,81 @@ namespace BrightAkademiApi.Business.Concrete
 {
     public class TrainerManager : ITrainerService
     {
-        public Task<Response<TrainerDto>> CreateAsync(TrainerCreateDto trainerCreateDto)
+        private readonly ITrainerRepository _trainerRepository;
+        private readonly IMapper _mapper;
+
+        public TrainerManager(ITrainerRepository trainerRepository, IMapper mapper)
         {
-            throw new NotImplementedException();
+            _trainerRepository = trainerRepository;
+            _mapper = mapper;
         }
 
-        public Task<Response<NoContent>> DeleteAsync(int id)
+        public async Task<Response<TrainerDto>> CreateAsync(TrainerCreateDto trainerCreateDto)
         {
-            throw new NotImplementedException();
+            var newtrainer = _mapper.Map<Trainer>(trainerCreateDto);
+            newtrainer.CreatedDate = DateTime.Now;
+            await _trainerRepository.CreateAsync(newtrainer);
+            var TrainerDto = _mapper.Map<TrainerDto>(newtrainer);
+            return Response<TrainerDto>.Success(TrainerDto, 201);
         }
 
-        public Task<Response<List<TrainerDto>>> GetAllAsync()
+        public async Task CreateWithUrl(Trainer trainer)
         {
-            throw new NotImplementedException();
+            await _trainerRepository.CreateWithUrl(trainer);
+
         }
 
-        public Task<Response<TrainerDto>> GetByIdAsync(int id)
+        public async Task<Response<NoContent>> DeleteAsync(int id)
         {
-            throw new NotImplementedException();
+            var deletedtrainer = await _trainerRepository.GetByIdAsync(id);
+            if (deletedtrainer == null)
+            {
+                return Response<NoContent>.Fail("Böyle bir Öğrenci yok.", 401);
+            }
+            _trainerRepository.Delete(deletedtrainer);
+            return Response<NoContent>.Success(203);
         }
 
-        public Task<Response<NoContent>> UpdateAsync(TrainerUpdateDto trainerUpdateDto)
+        public async Task<Response<List<TrainerDto>>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            var trainerList = await _trainerRepository.GetAllAsync();
+            var TrainerDtoList = _mapper.Map<List<TrainerDto>>(trainerList);
+            if (trainerList.Any())
+            {
+                return Response<List<TrainerDto>>.Success(TrainerDtoList, 200);
+            }
+            return Response<List<TrainerDto>>.Fail("Hiç öğrenci yok", 401);
+        }
+
+        public async Task<List<Trainer>> GetAllTrainersAsync(bool isDeleted, bool? isActive = null)
+        {
+            var result = await _trainerRepository.GetAllTrainersAsync(isDeleted, isActive);
+            return result;
+        }
+
+        public async Task<Response<TrainerDto>> GetByIdAsync(int id)
+        {
+            var trainer = await _trainerRepository.GetByIdAsync(id);
+            var TrainerDto = _mapper.Map<TrainerDto>(trainer);
+            if (trainer != null)
+            {
+                return Response<TrainerDto>.Success(TrainerDto, 201);
+            }
+            return Response<TrainerDto>.Fail("Böyle bir öğrenci yok", 401);
+        }
+
+        public async Task<Response<NoContent>> UpdateAsync(TrainerUpdateDto trainerUpdateDto)
+        {
+            var isThere = await _trainerRepository.AnyAsync(trainerUpdateDto.Id);
+            if (isThere)
+            {
+                var trainer = _mapper.Map<Trainer>(trainerUpdateDto);
+                trainer.ModifiedDate = DateTime.Now;
+                _trainerRepository.Update(trainer);
+                return Response<NoContent>.Success(204);
+            }
+
+            return Response<NoContent>.Fail("Böyle bir yayınevi yok", 401);
         }
     }
 }

@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace BrightAkademiApi.Data.Abstract
 {
-    internal interface ICategoryRepository : IGenericRepository<Category>
+    public interface ICategoryRepository : IGenericRepository<Category>
     {
+        Task<List<Category>> GetAllCategoriesAsync(bool isDeleted, bool? isActive = null);
     }
 }

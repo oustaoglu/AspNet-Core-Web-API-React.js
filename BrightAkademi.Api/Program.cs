@@ -1,5 +1,6 @@
 using BrightAkademiApi.Business.Abstract;
 using BrightAkademiApi.Business.Concrete;
+using BrightAkademiApi.Data.Abstract;
 using BrightAkademiApi.Data.Concrete.EfCore.Repositories;
 using BrightAkademiApi.Data.Concrete.EFCore.Contexts;
 using Microsoft.EntityFrameworkCore;
@@ -23,9 +24,31 @@ namespace BrightAkademiApi
             builder.Services.AddScoped<ITraineeService, TraineeManager>();
             builder.Services.AddScoped<ITrainerService, TrainerManager>();
 
+            builder.Services.AddScoped<ICategoryRepository, EfCoreCategoryRepository>();
+            builder.Services.AddScoped<ICourseRepository, EfCoreCourseRepository>();
+            builder.Services.AddScoped<ISettingRepository, EfCoreSettingRepository>();
+            builder.Services.AddScoped<ITraineeRepository, EfCoreTraineeRepository>();
+            builder.Services.AddScoped<ITrainerRepository, EfCoreTrainerRepository>();
+
+            builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
             builder.Services.AddEndpointsApiExplorer();
 
             builder.Services.AddSwaggerGen();
+
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy(
+                    name: "_allowAllPolicy",
+                    policy =>
+                    {
+                        policy
+                        .AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader();
+                    }
+                );
+            });
 
             var app = builder.Build();
 
@@ -37,11 +60,14 @@ namespace BrightAkademiApi
 
             app.UseHttpsRedirection();
 
+            app.UseStaticFiles();
+
+            app.UseRouting();
+
+            app.UseCors("_allowAllPolicy");
+
             app.UseAuthorization();
-
-
             app.MapControllers();
-
             app.Run();
         }
     }

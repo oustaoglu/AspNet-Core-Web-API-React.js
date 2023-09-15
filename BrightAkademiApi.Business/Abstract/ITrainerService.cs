@@ -1,4 +1,5 @@
-﻿using BrightAkademiApi.Shared.DTOs;
+﻿using BrightAkademiApi.Entity.Concrete;
+using BrightAkademiApi.Shared.DTOs;
 using BrightAkademiApi.Shared.ResponseDTOs;
 using System;
 using System.Collections.Generic;
@@ -17,5 +18,8 @@ namespace BrightAkademiApi.Business.Abstract
         Task<Response<NoContent>> UpdateAsync(TrainerUpdateDto trainerUpdateDto);
         Task<Response<NoContent>> DeleteAsync(int id);
         #endregion
+
+        Task<List<Trainer>> GetAllTrainersAsync(bool isDeleted, bool? isActive = null);
+        Task CreateWithUrl(Trainer trainer);
     }
 }

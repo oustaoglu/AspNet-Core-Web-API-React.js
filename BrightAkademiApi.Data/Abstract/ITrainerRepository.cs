@@ -7,7 +7,10 @@ using System.Threading.Tasks;
 
 namespace BrightAkademiApi.Data.Abstract
 {
-    internal interface ITrainerRepository : IGenericRepository<Trainer>
+    public interface ITrainerRepository : IGenericRepository<Trainer>
     {
+        Task<List<Trainer>> GetAllTrainersAsync(bool isDeleted, bool? isActive = null);
+        Task CreateWithUrl(Trainer trainer);
+        Task<bool> AnyAsync(int id);
     }
 }

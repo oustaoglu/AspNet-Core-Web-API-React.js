@@ -1,4 +1,7 @@
-﻿using BrightAkademiApi.Business.Abstract;
+﻿using AutoMapper;
+using BrightAkademiApi.Business.Abstract;
+using BrightAkademiApi.Data.Abstract;
+using BrightAkademiApi.Entity.Concrete;
 using BrightAkademiApi.Shared.DTOs;
 using BrightAkademiApi.Shared.ResponseDTOs;
 using System;
@@ -11,29 +14,185 @@ namespace BrightAkademiApi.Business.Concrete
 {
     public class CourseManager : ICourseService
     {
-        public Task<Response<CourseDto>> CreateAsync(CourseCreateDto courseCreateDto)
+        private readonly ICourseRepository _courseRepository;
+        private readonly ITrainerRepository _trainerRepository;
+        private readonly ITraineeRepository _traineeRepository;
+        private readonly IMapper _mapper;
+
+        public CourseManager(ICourseRepository courseRepository, ITrainerRepository trainerRepository, ITraineeRepository traineeRepository, IMapper mapper)
         {
-            throw new NotImplementedException();
+            _courseRepository = courseRepository;
+            _trainerRepository = trainerRepository;
+            _traineeRepository = traineeRepository;
+            _mapper = mapper;
         }
 
-        public Task<Response<NoContent>> DeleteAsync(int id)
+        public async Task CheckCoursesCategories()
         {
-            throw new NotImplementedException();
+            await _courseRepository.CheckCoursesCategories();
         }
 
-        public Task<Response<List<CourseDto>>> GetAllAsync()
+        public async Task<Response<CourseDto>> CreateAsync(CourseCreateDto courseCreateDto)
         {
-            throw new NotImplementedException();
+            var newCourse = _mapper.Map<Course>(courseCreateDto);
+            newCourse.CreatedDate = DateTime.Now;
+            newCourse.Trainer = await _trainerRepository.GetByIdAsync(newCourse.TrainerId);
+            await _courseRepository.CreateAsync(newCourse);
+
+            return Response<CourseDto>.Success(_mapper.Map<CourseDto>(newCourse), 201);
         }
 
-        public Task<Response<CourseDto>> GetByIdAsync(int id)
+        public async Task CreateCourseAsync(Course course, List<int> SelectedCategoryIds)
         {
-            throw new NotImplementedException();
+            await _courseRepository.CreateCourseAsync(course, SelectedCategoryIds);
         }
 
-        public Task<Response<NoContent>> UpdateAsync(CourseUpdateDto courseUpdateDto)
+        public async Task<Response<NoContent>> DeleteAsync(int id)
         {
-            throw new NotImplementedException();
+            var deletedCourse = await _courseRepository.GetByIdAsync(id);
+            if (deletedCourse == null)
+            {
+                return Response<NoContent>.Fail("Böyle bir Kurs yok", 401);
+            }
+            _courseRepository.Delete(deletedCourse);
+            return Response<NoContent>.Success(200);
+        }
+
+        public async Task<Response<List<CourseDto>>> GetAllActiveCoursesAsync(string categoryUrl = null, string trainerUrl = null, string traineeUrl = null)
+        {
+            var courseList = await _courseRepository.GetAllActiveCoursesAsync(categoryUrl, trainerUrl, traineeUrl);
+            if (courseList.Any())
+            {
+                var courseDtoList = _mapper.Map<List<CourseDto>>(courseList);
+                return Response<List<CourseDto>>.Success(courseDtoList, 200);
+
+            }
+            return Response<List<CourseDto>>.Fail("Kayıtlı Kurs Bulunamadı", 401);
+        }
+
+        public async Task<Response<List<CourseDto>>> GetAllAsync()
+        {
+            var courseList = await _courseRepository.GetAllAsync();
+            if (courseList.Any())
+            {
+                foreach (var course in courseList)
+                {
+
+                    course.Trainer = await _trainerRepository.GetByIdAsync(course.TrainerId);
+                }
+
+                var courseDtoList = _mapper.Map<List<CourseDto>>(courseList);
+                return Response<List<CourseDto>>.Success(courseDtoList, 200);
+            }
+            return Response<List<CourseDto>>.Fail("Kayıtlı kurs bulunamadı", 401);
+        }
+
+        public async Task<Response<List<CourseDto>>> GetAllCoursesWithTrainerAndTrainee(bool isDeleted)
+        {
+            var courseList = await _courseRepository.GetAllCoursesWithTrainerAndTrainee(isDeleted);
+            if (courseList.Any())
+            {
+                var CourseDtoList = _mapper.Map<List<CourseDto>>(courseList);
+                return Response<List<CourseDto>>.Success(CourseDtoList, 200);
+            }
+            return Response<List<CourseDto>>.Fail("Kayıtlı Kurs bulunamadı", 401);
+        }
+
+        public async Task<Response<CourseDto>> GetByIdAsync(int id)
+        {
+            var course = await _courseRepository.GetByIdAsync(id);
+            if (course != null)
+            {
+                course.Trainer = await _trainerRepository.GetByIdAsync(course.TrainerId);
+
+                var courseDto = _mapper.Map<CourseDto>(course);
+                return Response<CourseDto>.Success(courseDto, 200);
+            }
+            return Response<CourseDto>.Fail("Kitap bulunamadı", 401);
+        }
+
+        public async Task<Response<CourseDto>> GetCourseByIdAsync(int id)
+        {
+            var course = await _courseRepository.GetCourseByIdAsync(id);
+            if (course != null)
+            {
+                var courseDto = _mapper.Map<CourseDto>(course);
+                return Response<CourseDto>.Success(courseDto, 200);
+            }
+            return Response<CourseDto>.Fail("Kurs bulunamadı", 401);
+        }
+
+        public async Task<Response<CourseDto>> GetCourseByUrlAsync(string courseUrl)
+        {
+            var course = await _courseRepository.GetCourseByUrlAsync(courseUrl);
+            if (course != null)
+            {
+                var courseDto = _mapper.Map<CourseDto>(course);
+                return Response<CourseDto>.Success(courseDto, 200);
+            }
+            return Response<CourseDto>.Fail("Böyle bir kurs bulunamadı", 401);
+        }
+
+        public async Task<Response<List<CourseDto>>> GetCoursesByCategoryAsync(int categoryId)
+        {
+            var courseList = await _courseRepository.GetCoursesByCategoryAsync(categoryId);
+            if (courseList.Any())
+            {
+                var courseDtoList = _mapper.Map<List<CourseDto>>(courseList);
+                return Response<List<CourseDto>>.Success(courseDtoList, 200);
+            }
+            return Response<List<CourseDto>>.Fail("Bu kategoride kurs bulunamadı", 401);
+        }
+
+        public async Task<Response<List<CourseDto>>> GetCoursesByTraineeAsync(int traineeId)
+        {
+            var courseList = await _courseRepository.GetCoursesByTraineeAsync(traineeId);
+            if (courseList.Any())
+            {
+                var courseDtoList = _mapper.Map<List<CourseDto>>(courseList);
+                return Response<List<CourseDto>>.Success(courseDtoList, 200);
+            }
+            return Response<List<CourseDto>>.Fail("asdsadasd", 401);
+        }
+
+        public async Task<Response<List<CourseDto>>> GetCoursesWithFullDataAsync(bool? isHome = null, bool? isActive = null)
+        {
+            var courseList = await _courseRepository.GetCoursesWithFullDataAsync(isHome, isActive);
+            if (courseList.Any())
+            {
+                var courseDtoList = _mapper.Map<List<CourseDto>>(courseList);
+                return Response<List<CourseDto>>.Success(courseDtoList, 200);
+            }
+            return Response<List<CourseDto>>.Fail("Kayıtlı kurs bulunamadı", 401);
+        }
+
+        public async Task<Response<NoContent>> UpdateAsync(CourseUpdateDto courseUpdateDto)
+        {
+            var isThere = await _courseRepository.AnyAsnc(courseUpdateDto.Id);
+            if (isThere)
+            {
+                var course = _mapper.Map<Course>(courseUpdateDto);
+                course.ModifiedDate = DateTime.Now;
+                _courseRepository.Update(course);
+                return Response<NoContent>.Success(204);
+            }
+            return Response<NoContent>.Fail("Böyle bir kurs bulunamadı", 401);
+        }
+
+        public void UpdateCourse(Course course)
+        {
+            _courseRepository.UpdateCourse(course);
+        }
+
+        public async Task UpdateTraineeOfCourses()
+        {
+            await _courseRepository.UpdateTraineeOfCourses();
+        }
+
+        public async Task UpdateTrainerOfCourses()
+        {
+            await _courseRepository.UpdateTrainerOfCourses();
+
         }
     }
 }

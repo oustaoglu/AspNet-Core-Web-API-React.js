@@ -8,5 +8,10 @@ namespace BrightAkademiApi.Shared.DTOs
 {
     public class TraineeCreateDto
     {
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Education { get; set; }
+        public string Url { get; set; }
+        public string PhotoUrl { get; set; }
     }
 }

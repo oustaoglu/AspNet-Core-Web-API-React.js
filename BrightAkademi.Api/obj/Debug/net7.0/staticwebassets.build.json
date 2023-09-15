@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "7/8IHWj1uKtaEgyq6754inQk/6sfpPKKGUYpYSTucUQ=",
-  "Source": "BrightAkademiApi",
-  "BasePath": "_content/BrightAkademiApi",
+  "Hash": "kVOaTVVMN3mn1/1vYkIfC6Iz01y5m4ltUcTFwPz04w8=",
+  "Source": "BrightAkademi.Api",
+  "BasePath": "_content/BrightAkademi.Api",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],

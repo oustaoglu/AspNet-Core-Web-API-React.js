@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BrightAkademiApi.Data.Abstract
 {
-    internal interface ISettingRepository : IGenericRepository<Setting>
+    public interface ISettingRepository : IGenericRepository<Setting>
     {
     }
 }

@@ -1,4 +1,5 @@
-﻿using BrightAkademiApi.Shared.DTOs;
+﻿using BrightAkademiApi.Entity.Concrete;
+using BrightAkademiApi.Shared.DTOs;
 using BrightAkademiApi.Shared.ResponseDTOs;
 using System;
 using System.Collections.Generic;
@@ -17,5 +18,19 @@ namespace BrightAkademiApi.Business.Abstract
         Task<Response<NoContent>> UpdateAsync(CourseUpdateDto courseUpdateDto);
         Task<Response<NoContent>> DeleteAsync(int id);
         #endregion
+
+        Task<Response<List<CourseDto>>> GetCoursesWithFullDataAsync(bool? isHome = null, bool? isActive = null);
+        Task<Response<List<CourseDto>>> GetAllActiveCoursesAsync(string categoryUrl = null, string trainerUrl = null, string traineeUrl = null);
+        Task<Response<CourseDto>> GetCourseByUrlAsync(string courseUrl);
+        Task<Response<CourseDto>> GetCourseByIdAsync(int id);
+        Task<Response<List<CourseDto>>> GetCoursesByCategoryAsync(int categoryId);
+        Task<Response<List<CourseDto>>> GetCoursesByTraineeAsync(int traineeId);
+        Task<Response<List<CourseDto>>> GetAllCoursesWithTrainerAndTrainee(bool isDeleted);
+
+        Task CreateCourseAsync(Course course, List<int> SelectedCategoryIds);
+        Task UpdateTraineeOfCourses();
+        Task UpdateTrainerOfCourses();
+        Task CheckCoursesCategories();
+        void UpdateCourse(Course course);
     }
 }
