@@ -1,0 +1,211 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\onrus\\OneDrive\\Masaüstü\\AspNet-Core-Web-API-React.js\\BrightAkademie\\BrightAkademie.Data\\BrightAkademie.Data.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\onrus\\OneDrive\\Masaüstü\\AspNet-Core-Web-API-React.js\\BrightAkademie\\BrightAkademie.Data\\BrightAkademie.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\onrus\\OneDrive\\Masaüstü\\AspNet-Core-Web-API-React.js\\BrightAkademie\\BrightAkademie.Data\\BrightAkademie.Data.csproj",
+        "projectName": "BrightAkademie.Data",
+        "projectPath": "C:\\Users\\onrus\\OneDrive\\Masaüstü\\AspNet-Core-Web-API-React.js\\BrightAkademie\\BrightAkademie.Data\\BrightAkademie.Data.csproj",
+        "packagesPath": "C:\\Users\\onrus\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\onrus\\OneDrive\\Masaüstü\\AspNet-Core-Web-API-React.js\\BrightAkademie\\BrightAkademie.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\onrus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\onrus\\OneDrive\\Masaüstü\\AspNet-Core-Web-API-React.js\\BrightAkademie\\BrightAkademie.Entity\\BrightAkademie.Entity.csproj": {
+                "projectPath": "C:\\Users\\onrus\\OneDrive\\Masaüstü\\AspNet-Core-Web-API-React.js\\BrightAkademie\\BrightAkademie.Entity\\BrightAkademie.Entity.csproj"
+              },
+              "C:\\Users\\onrus\\OneDrive\\Masaüstü\\AspNet-Core-Web-API-React.js\\BrightAkademie\\BrightAkademie.Shared\\BrightAkademie.Shared.csproj": {
+                "projectPath": "C:\\Users\\onrus\\OneDrive\\Masaüstü\\AspNet-Core-Web-API-React.js\\BrightAkademie\\BrightAkademie.Shared\\BrightAkademie.Shared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\onrus\\OneDrive\\Masaüstü\\AspNet-Core-Web-API-React.js\\BrightAkademie\\BrightAkademie.Entity\\BrightAkademie.Entity.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\onrus\\OneDrive\\Masaüstü\\AspNet-Core-Web-API-React.js\\BrightAkademie\\BrightAkademie.Entity\\BrightAkademie.Entity.csproj",
+        "projectName": "BrightAkademie.Entity",
+        "projectPath": "C:\\Users\\onrus\\OneDrive\\Masaüstü\\AspNet-Core-Web-API-React.js\\BrightAkademie\\BrightAkademie.Entity\\BrightAkademie.Entity.csproj",
+        "packagesPath": "C:\\Users\\onrus\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\onrus\\OneDrive\\Masaüstü\\AspNet-Core-Web-API-React.js\\BrightAkademie\\BrightAkademie.Entity\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\onrus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\onrus\\OneDrive\\Masaüstü\\AspNet-Core-Web-API-React.js\\BrightAkademie\\BrightAkademie.Shared\\BrightAkademie.Shared.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\onrus\\OneDrive\\Masaüstü\\AspNet-Core-Web-API-React.js\\BrightAkademie\\BrightAkademie.Shared\\BrightAkademie.Shared.csproj",
+        "projectName": "BrightAkademie.Shared",
+        "projectPath": "C:\\Users\\onrus\\OneDrive\\Masaüstü\\AspNet-Core-Web-API-React.js\\BrightAkademie\\BrightAkademie.Shared\\BrightAkademie.Shared.csproj",
+        "packagesPath": "C:\\Users\\onrus\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\onrus\\OneDrive\\Masaüstü\\AspNet-Core-Web-API-React.js\\BrightAkademie\\BrightAkademie.Shared\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\onrus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspnetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
