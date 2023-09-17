@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3ehuLk/X7eRDDHYR49T6I5XNgGocVaAvFEsKNu9nqYcQrTBhkfFQWPpHOt4DBJoI/T1yO7Oj5CfyUWUHJAAoQA==",
+  "dgSpecHash": "nambfiU8mN9KRtuClF5FR6wbKX2UokhjtO78wj16sfJqaeySkHpEYK34/kDzA05/oMRFC7/Acy1JYDLIMR3KRA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\onrus\\OneDrive\\Masaüstü\\AspNet-Core-Web-API-React.js\\BrightAkademie\\BrightAkademie.Data\\BrightAkademie.Data.csproj",
+  "projectFilePath": "C:\\Git\\AspNet-Core-Web-API-React.js\\BrightAkademie\\BrightAkademie.Data\\BrightAkademie.Data.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\onrus\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\onrus\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\7.0.11\\microsoft.aspnetcore.cryptography.internal.7.0.11.nupkg.sha512",

@@ -1,5 +1,6 @@
 ﻿using BrightAkademie.Data.Abstract;
 using BrightAkademie.Entity.Concrete;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,5 +11,8 @@ namespace BrightAkademie.Data.Concrete.EFCore.Repositories
 {
     public class EfCoreSettingRepository : EfCoreGenericRepository<Setting>, ISettingRepository
     {
+        public EfCoreSettingRepository(DbContext dbContext) : base(dbContext)
+        {
+        }
     }
 }

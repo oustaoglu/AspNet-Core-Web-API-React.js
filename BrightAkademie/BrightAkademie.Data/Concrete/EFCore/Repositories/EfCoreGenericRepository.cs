@@ -1,4 +1,5 @@
 ﻿using BrightAkademie.Data.Abstract;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,29 +10,39 @@ namespace BrightAkademie.Data.Concrete.EFCore.Repositories
 {
     public class EfCoreGenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : class
     {
-        public Task CreateAsync(TEntity entity)
+        protected readonly DbContext _dbContext;
+
+        public EfCoreGenericRepository(DbContext dbContext)
         {
-            throw new NotImplementedException();
+            _dbContext = dbContext;
+        }
+
+        public async Task CreateAsync(TEntity entity)
+        {
+            await _dbContext.Set<TEntity>().AddAsync(entity);
+            await _dbContext.SaveChangesAsync();
         }
 
         public void Delete(TEntity entity)
         {
-            throw new NotImplementedException();
+            _dbContext.Set<TEntity>().Remove(entity);
+            _dbContext.SaveChanges();
         }
 
-        public Task<List<TEntity>> GetAllAsync()
+        public async Task<List<TEntity>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            return await _dbContext.Set<TEntity>().ToListAsync();
         }
 
-        public Task<TEntity> GetByIdAsync(int? id)
+        public async Task<TEntity> GetByIdAsync(int? id)
         {
-            throw new NotImplementedException();
+            return await _dbContext.Set<TEntity>().FindAsync(id);
         }
 
         public void Update(TEntity entity)
         {
-            throw new NotImplementedException();
+            _dbContext.Set<TEntity>().Update(entity);
+            _dbContext.SaveChanges();
         }
     }
 }

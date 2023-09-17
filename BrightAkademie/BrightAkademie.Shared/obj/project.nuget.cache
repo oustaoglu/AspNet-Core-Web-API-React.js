@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SxjysCkvvoq+NLMNAlmGP7K8R2U+kNPvh+m0e47xtAUq+WMxsXIZ+eUjRAJduIyWyFn0LeqFXhv1sZbRL1WBiA==",
+  "dgSpecHash": "z16sr28641Fgi9VWfX76DplFReH6ldCf/q/bmbEFgF3C1BTeRYKF0uZXWquKDbYBZHA8CHTvHDqNGv9mpaGK4A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\onrus\\OneDrive\\Masaüstü\\AspNet-Core-Web-API-React.js\\BrightAkademie\\BrightAkademie.Shared\\BrightAkademie.Shared.csproj",
+  "projectFilePath": "C:\\Git\\AspNet-Core-Web-API-React.js\\BrightAkademie\\BrightAkademie.Shared\\BrightAkademie.Shared.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\onrus\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
     "C:\\Users\\onrus\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.1\\microsoft.extensions.primitives.5.0.1.nupkg.sha512",

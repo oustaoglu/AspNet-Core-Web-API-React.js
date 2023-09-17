@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TYzNDibDAmgbSEA7FmMO7ESdYUZVmMySLJqjbJUxM+Ykbgf/eHWXUTO/iLPajehzUnI6mTx35SElXhYuS3fv5w==",
+  "dgSpecHash": "Ces2Wo548MfGXZlMSOrrK2Tx/SxtubZ1HUTbmu2Ywo6M2yGUDvHjkcYVH0E0mrpRRJdPPDdFjKAtVWVl8YXPzQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\onrus\\OneDrive\\Masaüstü\\AspNet-Core-Web-API-React.js\\BrightAkademie\\BrightAkademie.Entity\\BrightAkademie.Entity.csproj",
+  "projectFilePath": "C:\\Git\\AspNet-Core-Web-API-React.js\\BrightAkademie\\BrightAkademie.Entity\\BrightAkademie.Entity.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\onrus\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\7.0.11\\microsoft.aspnetcore.cryptography.internal.7.0.11.nupkg.sha512",
     "C:\\Users\\onrus\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\7.0.11\\microsoft.aspnetcore.cryptography.keyderivation.7.0.11.nupkg.sha512",

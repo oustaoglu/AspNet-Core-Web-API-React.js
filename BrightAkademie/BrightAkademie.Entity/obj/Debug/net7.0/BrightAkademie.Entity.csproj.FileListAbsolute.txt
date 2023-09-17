@@ -10,3 +10,15 @@ C:\Users\onrus\OneDrive\Masaüstü\AspNet-Core-Web-API-React.js\BrightAkademie\B
 C:\Users\onrus\OneDrive\Masaüstü\AspNet-Core-Web-API-React.js\BrightAkademie\BrightAkademie.Entity\obj\Debug\net7.0\refint\BrightAkademie.Entity.dll
 C:\Users\onrus\OneDrive\Masaüstü\AspNet-Core-Web-API-React.js\BrightAkademie\BrightAkademie.Entity\obj\Debug\net7.0\BrightAkademie.Entity.pdb
 C:\Users\onrus\OneDrive\Masaüstü\AspNet-Core-Web-API-React.js\BrightAkademie\BrightAkademie.Entity\obj\Debug\net7.0\ref\BrightAkademie.Entity.dll
+C:\Git\AspNet-Core-Web-API-React.js\BrightAkademie\BrightAkademie.Entity\bin\Debug\net7.0\BrightAkademie.Entity.deps.json
+C:\Git\AspNet-Core-Web-API-React.js\BrightAkademie\BrightAkademie.Entity\bin\Debug\net7.0\BrightAkademie.Entity.dll
+C:\Git\AspNet-Core-Web-API-React.js\BrightAkademie\BrightAkademie.Entity\bin\Debug\net7.0\BrightAkademie.Entity.pdb
+C:\Git\AspNet-Core-Web-API-React.js\BrightAkademie\BrightAkademie.Entity\obj\Debug\net7.0\BrightAkademie.Entity.csproj.AssemblyReference.cache
+C:\Git\AspNet-Core-Web-API-React.js\BrightAkademie\BrightAkademie.Entity\obj\Debug\net7.0\BrightAkademie.Entity.GeneratedMSBuildEditorConfig.editorconfig
+C:\Git\AspNet-Core-Web-API-React.js\BrightAkademie\BrightAkademie.Entity\obj\Debug\net7.0\BrightAkademie.Entity.AssemblyInfoInputs.cache
+C:\Git\AspNet-Core-Web-API-React.js\BrightAkademie\BrightAkademie.Entity\obj\Debug\net7.0\BrightAkademie.Entity.AssemblyInfo.cs
+C:\Git\AspNet-Core-Web-API-React.js\BrightAkademie\BrightAkademie.Entity\obj\Debug\net7.0\BrightAkademie.Entity.csproj.CoreCompileInputs.cache
+C:\Git\AspNet-Core-Web-API-React.js\BrightAkademie\BrightAkademie.Entity\obj\Debug\net7.0\BrightAkademie.Entity.dll
+C:\Git\AspNet-Core-Web-API-React.js\BrightAkademie\BrightAkademie.Entity\obj\Debug\net7.0\refint\BrightAkademie.Entity.dll
+C:\Git\AspNet-Core-Web-API-React.js\BrightAkademie\BrightAkademie.Entity\obj\Debug\net7.0\BrightAkademie.Entity.pdb
+C:\Git\AspNet-Core-Web-API-React.js\BrightAkademie\BrightAkademie.Entity\obj\Debug\net7.0\ref\BrightAkademie.Entity.dll

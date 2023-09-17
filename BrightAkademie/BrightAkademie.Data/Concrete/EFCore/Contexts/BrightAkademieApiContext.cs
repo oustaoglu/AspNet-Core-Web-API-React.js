@@ -20,7 +20,7 @@ namespace BrightAkademie.Data.Concrete.EFCore.Contexts
         public DbSet<CourseCategory> CoursesCategories { get; set; }
         public DbSet<CourseTrainee> CourseTrainees { get; set; }
         public DbSet<Setting> Settings { get; set; }
-        public DbSet<Trainee> Traines { get; set; }
+        public DbSet<Trainee> Trainees { get; set; }
         public DbSet<Trainer> Trainers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

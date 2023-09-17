@@ -1,11 +1,19 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using BrightAkademie.Business.Abstract;
+using BrightAkademie.Shared.ControllerBases;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BrightAkademie.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class SettingsController : ControllerBase
+    public class SettingsController : CustomControllerBase
     {
+        private readonly ISettingService _settingManager;
+
+        public SettingsController(ISettingService settingManager)
+        {
+            _settingManager = settingManager;
+        }
     }
 }
