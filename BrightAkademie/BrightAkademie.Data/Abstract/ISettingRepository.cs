@@ -9,7 +9,7 @@ namespace BrightAkademie.Data.Abstract
 {
     public interface ISettingRepository : IGenericRepository<Setting>
     {
-        Task<List<Setting>> GetAllSettingsAsync(bool isDeleted, bool? isActive = null);
+        Task<List<Setting>> GetAllSettings(bool isDeleted, bool? isActive = null);
         Task<bool> AnyAsync(int id);
 
 

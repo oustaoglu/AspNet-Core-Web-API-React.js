@@ -19,29 +19,52 @@ namespace BrightAkademie.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public async Task<IActionResult> GetCategories()
         {
             var response = await _categoryManager.GetAllAsync();
-            if (!response.IsSucceeded)
+            if (response.IsSucceeded)
             {
-                return NotFound();
+                var jsonResult = JsonSerializer.Serialize(response);
+                return Ok(jsonResult);
             }
-            var jsonResult = JsonSerializer.Serialize(response);
-            return Ok(jsonResult);
+            return NotFound();
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetById(int id)
+        public async Task<IActionResult> GetByIdCategories(int id)
         {
             var response = await _categoryManager.GetByIdAsync(id);
             var jsonResult = JsonSerializer.Serialize(response);
             return Ok(jsonResult);
         }
+
         [HttpPost]
-        public async Task<IActionResult> Create(CategoryCreateDto categoryCreateDto)
+        public async Task<IActionResult> CreateCategories(CategoryCreateDto categoryCreateDto)
         {
             var response = await _categoryManager.CreateAsync(categoryCreateDto);
             return CreateActionResult(response);
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> UpdateCategories(CategoryUpdateDto categoryUpdateDto)
+        {
+            var response = await _categoryManager.UpdateAsync(categoryUpdateDto);
+            if (response.IsSucceeded)
+            {
+                return CreateActionResult(response);
+            }
+            return BadRequest();
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> DeleteCategories(int id)
+        {
+            var response = await _categoryManager.DeleteAsync(id);
+            if (response.IsSucceeded)
+            {
+                return CreateActionResult(response);
+            }
+            return BadRequest();
         }
     }
 }

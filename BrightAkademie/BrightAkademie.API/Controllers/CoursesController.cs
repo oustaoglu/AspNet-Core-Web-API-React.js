@@ -1,8 +1,10 @@
 ﻿using BrightAkademie.Business.Abstract;
+using BrightAkademie.Business.Concrete;
 using BrightAkademie.Shared.ControllerBases;
 using BrightAkademie.Shared.DTOs;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Text.Json;
 
 namespace BrightAkademie.API.Controllers
 {
@@ -25,15 +27,15 @@ namespace BrightAkademie.API.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetCourses(int id)
+        public async Task<IActionResult> GetByIdCourses(int id)
         {
             var response = await _courseManager.GetCourseByIdAsync(id);
+            var jsonResult = JsonSerializer.Serialize(response);
             return CreateActionResult(response);
         }
 
         [HttpPost]
-        [Route("/api/[controller]/SaveCourse")]
-        public async Task<IActionResult> SaveCourse(CourseCreateDto courseCreateDto)
+        public async Task<IActionResult> CreateCourses(CourseCreateDto courseCreateDto)
         {
             var response = await _courseManager.CreateAsync(courseCreateDto);
             return CreateActionResult(response);
@@ -48,10 +50,21 @@ namespace BrightAkademie.API.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> UpdateBook(CourseUpdateDto courseUpdateDto)
+        public async Task<IActionResult> UpdateCourses(CourseUpdateDto courseUpdateDto)
         {
             var response = await _courseManager.UpdateAsync(courseUpdateDto);
             return CreateActionResult(response);
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> DeletCourses(int id)
+        {
+            var response = await _courseManager.DeleteAsync(id);
+            if (response.IsSucceeded)
+            {
+                return CreateActionResult(response);
+            }
+            return BadRequest();
         }
     }
 }

@@ -12,7 +12,7 @@ namespace BrightAkademie.Data.Concrete.EFCore.Repositories
 {
     public class EfCoreSettingRepository : EfCoreGenericRepository<Setting>, ISettingRepository
     {
-        public EfCoreSettingRepository(DbContext dbContext) : base(dbContext)
+        public EfCoreSettingRepository(BrightAkademieContext _context) : base(_context)
         {
         }
         private BrightAkademieContext Context
@@ -27,7 +27,7 @@ namespace BrightAkademie.Data.Concrete.EFCore.Repositories
                 .AnyAsync(x => x.Id == id);
         }
 
-        public async Task<List<Setting>> GetAllSettingsAsync(bool isDeleted, bool? isActive = null)
+        public async Task<List<Setting>> GetAllSettings(bool isDeleted, bool? isActive = null)
         {
             var result = Context
                 .Settings

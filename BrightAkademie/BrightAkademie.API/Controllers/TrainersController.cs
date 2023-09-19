@@ -19,7 +19,7 @@ namespace BrightAkademie.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public async Task<IActionResult> GetTrainers()
         {
             var response = await _trainerManager.GetAllAsync();
             if (response.IsSucceeded)
@@ -31,7 +31,7 @@ namespace BrightAkademie.API.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetById(int id)
+        public async Task<IActionResult> GetByIdTrainers(int id)
         {
             var response = await _trainerManager.GetByIdAsync(id);
             if (response.IsSucceeded)
@@ -43,7 +43,7 @@ namespace BrightAkademie.API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Save(TrainerCreateDto trainerCreateDto)
+        public async Task<IActionResult> CreateTrainers(TrainerCreateDto trainerCreateDto)
         {
             var response = await _trainerManager.CreateAsync(trainerCreateDto);
             if (response.IsSucceeded)
@@ -54,7 +54,7 @@ namespace BrightAkademie.API.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> Update(TrainerUpdateDto trainerUpdateDto)
+        public async Task<IActionResult> UpdateTrainers(TrainerUpdateDto trainerUpdateDto)
         {
             var response = await _trainerManager.UpdateAsync(trainerUpdateDto);
             if (response.IsSucceeded)
@@ -65,7 +65,7 @@ namespace BrightAkademie.API.Controllers
         }
 
         [HttpDelete]
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> DeleteTrainers(int id)
         {
             var response = await _trainerManager.DeleteAsync(id);
             if (response.IsSucceeded)

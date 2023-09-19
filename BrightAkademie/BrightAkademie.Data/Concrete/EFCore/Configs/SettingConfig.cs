@@ -33,6 +33,17 @@ namespace BrightAkademie.Data.Concrete.EFCore.Configs
             builder.Property(x => x.Information).IsRequired();
 
             builder.Property(x => x.Questions).IsRequired();
+
+            builder.HasData(
+               new Setting
+               {
+                   Id = 1,
+                   CompanyName = "Bright Akademie",
+                   Adress = "Barbaros Bulvarı Yıldız İş Hanı No: 9 Kat: 3 Beşiktaş - İstanbul",
+                   About = "Eğitim",
+                   Information = "Eğitim",
+                   Questions = "Eğitim",
+               });
         }
     }
 }
