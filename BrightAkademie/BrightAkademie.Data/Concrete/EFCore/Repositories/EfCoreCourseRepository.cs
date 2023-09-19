@@ -12,12 +12,12 @@ namespace BrightAkademie.Data.Concrete.EFCore.Repositories
 {
     public class EfCoreCourseRepository : EfCoreGenericRepository<Course>, ICourseRepository
     {
-        public EfCoreCourseRepository(BrightAkademieApiContext _context) : base(_context)
+        public EfCoreCourseRepository(BrightAkademieContext _context) : base(_context)
         {
         }
-        private BrightAkademieApiContext Context
-        { 
-            get { return _dbContext as BrightAkademieApiContext; } 
+        private BrightAkademieContext Context
+        {
+            get { return _dbContext as BrightAkademieContext; }
         }
 
         public async Task<bool> AnyAsync(int id)
@@ -59,7 +59,6 @@ namespace BrightAkademie.Data.Concrete.EFCore.Repositories
             }).ToList();
             Context.Courses.Update(course);
             await Context.SaveChangesAsync();
-
         }
 
         public async Task<List<Course>> GetAllActiveCoursesAsync(string categoryUrl = null, string trainerUrl = null, string traineeUrl = null)
@@ -105,8 +104,6 @@ namespace BrightAkademie.Data.Concrete.EFCore.Repositories
                  .Include(c => c.Trainer)
                  .ToListAsync();
             return result;
-
-
         }
 
         public async Task<Course> GetCourseByIdAsync(int id)

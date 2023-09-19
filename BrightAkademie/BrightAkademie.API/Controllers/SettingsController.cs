@@ -15,5 +15,12 @@ namespace BrightAkademie.API.Controllers
         {
             _settingManager = settingManager;
         }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAuthors()
+        {
+            var response = await _settingManager.GetAllAsync();
+            return CreateActionResult(response);
+        }
     }
 }

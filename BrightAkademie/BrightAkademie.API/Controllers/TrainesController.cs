@@ -9,11 +9,18 @@ namespace BrightAkademie.API.Controllers
     [ApiController]
     public class TrainesController : CustomControllerBase
     {
-        private readonly ITraineeService traineeManager;
+        private readonly ITraineeService _traineeManager;
 
         public TrainesController(ITraineeService traineeManager)
         {
-            this.traineeManager = traineeManager;
+            _traineeManager = traineeManager;
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAuthors()
+        {
+            var response = await _traineeManager.GetAllAsync();
+            return CreateActionResult(response);
         }
     }
 }

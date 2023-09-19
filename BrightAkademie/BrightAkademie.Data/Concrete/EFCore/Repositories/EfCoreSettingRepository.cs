@@ -1,4 +1,5 @@
 ﻿using BrightAkademie.Data.Abstract;
+using BrightAkademie.Data.Concrete.EFCore.Contexts;
 using BrightAkademie.Entity.Concrete;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -13,6 +14,32 @@ namespace BrightAkademie.Data.Concrete.EFCore.Repositories
     {
         public EfCoreSettingRepository(DbContext dbContext) : base(dbContext)
         {
+        }
+        private BrightAkademieContext Context
+        {
+            get { return _dbContext as BrightAkademieContext; }
+        }
+
+        public async Task<bool> AnyAsync(int id)
+        {
+            return await Context
+                .Settings
+                .AnyAsync(x => x.Id == id);
+        }
+
+        public async Task<List<Setting>> GetAllSettingsAsync(bool isDeleted, bool? isActive = null)
+        {
+            var result = Context
+                .Settings
+                .Where(a => a.IsDeleted == isDeleted)
+                .AsQueryable();
+            if (isActive != null)
+            {
+                result = result
+                    .Where(a => a.IsActive == isActive)
+                    .AsQueryable();
+            }
+            return await result.ToListAsync();
         }
     }
 }

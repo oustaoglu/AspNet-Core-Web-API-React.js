@@ -12,12 +12,12 @@ namespace BrightAkademie.Data.Concrete.EFCore.Repositories
 {
     public class EfCoreTrainerRepository : EfCoreGenericRepository<Trainer>, ITrainerRepository
     {
-        public EfCoreTrainerRepository(BrightAkademieApiContext _context) : base(_context)
+        public EfCoreTrainerRepository(BrightAkademieContext _context) : base(_context)
         {
         }
-        private BrightAkademieApiContext Context
+        private BrightAkademieContext Context
         {
-            get { return _dbContext as BrightAkademieApiContext; }
+            get { return _dbContext as BrightAkademieContext; }
         }
 
         public async Task<bool> AnyAsync(int id)

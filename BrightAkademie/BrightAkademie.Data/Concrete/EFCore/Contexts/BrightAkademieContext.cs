@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace BrightAkademie.Data.Concrete.EFCore.Contexts
 {
-    public class BrightAkademieApiContext : DbContext
+    public class BrightAkademieContext : DbContext
     {
-        public BrightAkademieApiContext(DbContextOptions options) : base(options)
+        public BrightAkademieContext(DbContextOptions options) : base(options)
         {
 
         }
@@ -25,7 +25,7 @@ namespace BrightAkademie.Data.Concrete.EFCore.Contexts
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfigurationsFromAssembly(typeof(CourseConfig).Assembly);
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(CategoryConfig).Assembly);
             base.OnModelCreating(modelBuilder);
         }
     }

@@ -34,10 +34,6 @@ namespace BrightAkademie.API.Controllers
         public async Task<IActionResult> GetById(int id)
         {
             var response = await _categoryManager.GetByIdAsync(id);
-            //if (!response.IsSucceeded)
-            //{
-            //    return NotFound();
-            //}
             var jsonResult = JsonSerializer.Serialize(response);
             return Ok(jsonResult);
         }

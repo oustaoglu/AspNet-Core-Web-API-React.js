@@ -12,12 +12,19 @@ namespace BrightAkademie.Data.Concrete.EFCore.Repositories
 {
     public class EfCoreCategoryRepository : EfCoreGenericRepository<Category>, ICategoryRepository
     {
-        public EfCoreCategoryRepository(BrightAkademieApiContext _context) : base(_context)
+        public EfCoreCategoryRepository(BrightAkademieContext _context) : base(_context)
         {
         }
-        private BrightAkademieApiContext Context 
+        private BrightAkademieContext Context
         {
-            get { return _dbContext as BrightAkademieApiContext; } 
+            get { return _dbContext as BrightAkademieContext; }
+        }
+
+        public async Task<bool> AnyAsync(int id)
+        {
+            return await Context
+                .Categories
+                .AnyAsync(x => x.Id == id);
         }
 
         public async Task<List<Category>> GetAllCategoriesAsync(bool isDeleted, bool? isActive = null)
