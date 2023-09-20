@@ -19,14 +19,19 @@ namespace BrightAkademie.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAuthors()
+        public async Task<IActionResult> GetTraines()
         {
             var response = await _traineeManager.GetAllAsync();
-            return CreateActionResult(response);
+            if (response.IsSucceeded)
+            {
+                var jsonResult =JsonSerializer.Serialize(response);
+                return Ok(jsonResult);
+            }
+            return NotFound();
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetByIdTrainers(int id)
+        public async Task<IActionResult> GetByIdTraines(int id)
         {
             var response = await _traineeManager.GetByIdAsync(id);
             if (response.IsSucceeded)
@@ -38,7 +43,7 @@ namespace BrightAkademie.API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateTrainers(TraineeCreateDto traineeCreateDto)
+        public async Task<IActionResult> CreateTraines(TraineeCreateDto traineeCreateDto)
         {
             var response = await _traineeManager.CreateAsync(traineeCreateDto);
             if (response.IsSucceeded)
@@ -49,7 +54,7 @@ namespace BrightAkademie.API.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> UpdateTrainers(TraineeUpdateDto traineeUpdateDto)
+        public async Task<IActionResult> UpdateTraines(TraineeUpdateDto traineeUpdateDto)
         {
             var response = await _traineeManager.UpdateAsync(traineeUpdateDto);
             if (response.IsSucceeded)
@@ -60,7 +65,7 @@ namespace BrightAkademie.API.Controllers
         }
 
         [HttpDelete]
-        public async Task<IActionResult> DeleteTrainers(int id)
+        public async Task<IActionResult> DeleteTraines(int id)
         {
             var response = await _traineeManager.DeleteAsync(id);
             if (response.IsSucceeded)

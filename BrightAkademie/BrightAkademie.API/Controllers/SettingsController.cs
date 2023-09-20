@@ -35,15 +35,23 @@ namespace BrightAkademie.API.Controllers
         public async Task<IActionResult> GetByIdSettings(int id)
         {
             var response = await _settingManager.GetByIdAsync(id);
-            var jsonResult = JsonSerializer.Serialize(response);
-            return Ok(jsonResult);
+            if (response.IsSucceeded)
+            {
+                var jsonResult = JsonSerializer.Serialize(response);
+                return Ok(jsonResult);
+            }
+            return NotFound();
         }
 
         [HttpPost]
         public async Task<IActionResult> CreateSettings(SettingCreateDto settingCreateDto)
         {
             var response = await _settingManager.CreateAsync(settingCreateDto);
-            return CreateActionResult(response);
+            if (response.IsSucceeded)
+            {
+                return CreateActionResult(response);
+            }
+            return BadRequest();
         }
 
         [HttpPut]

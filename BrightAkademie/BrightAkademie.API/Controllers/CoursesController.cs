@@ -30,15 +30,23 @@ namespace BrightAkademie.API.Controllers
         public async Task<IActionResult> GetByIdCourses(int id)
         {
             var response = await _courseManager.GetCourseByIdAsync(id);
-            var jsonResult = JsonSerializer.Serialize(response);
-            return CreateActionResult(response);
+            if (response.IsSucceeded)
+            {
+                var jsonResult = JsonSerializer.Serialize(response);
+                return Ok(jsonResult);
+            }
+            return NotFound();
         }
 
         [HttpPost]
         public async Task<IActionResult> CreateCourses(CourseCreateDto courseCreateDto)
         {
             var response = await _courseManager.CreateAsync(courseCreateDto);
-            return CreateActionResult(response);
+            if (response.IsSucceeded)
+            {
+                return CreateActionResult(response);
+            }
+            return BadRequest();
         }
 
         [HttpGet]
@@ -53,7 +61,11 @@ namespace BrightAkademie.API.Controllers
         public async Task<IActionResult> UpdateCourses(CourseUpdateDto courseUpdateDto)
         {
             var response = await _courseManager.UpdateAsync(courseUpdateDto);
-            return CreateActionResult(response);
+            if (response.IsSucceeded)
+            {
+                return CreateActionResult(response);
+            }
+            return BadRequest();
         }
 
         [HttpDelete]

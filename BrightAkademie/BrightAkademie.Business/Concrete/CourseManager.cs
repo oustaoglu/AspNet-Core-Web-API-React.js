@@ -66,7 +66,6 @@ namespace BrightAkademie.Business.Concrete
             {
                 var courseDtoList = _mapper.Map<List<CourseDto>>(courseList);
                 return Response<List<CourseDto>>.Success(courseDtoList, 200);
-
             }
             return Response<List<CourseDto>>.Fail("Kayıtlı kurs bulunamadı", 401);
         }
@@ -78,10 +77,8 @@ namespace BrightAkademie.Business.Concrete
             {
                 foreach (var course in courseList)
                 {
-
                     course.Trainer = await _trainerRepository.GetByIdAsync(course.TrainerId);
                 }
-
                 var courseDtoList = _mapper.Map<List<CourseDto>>(courseList);
                 return Response<List<CourseDto>>.Success(courseDtoList, 200);
             }
@@ -106,7 +103,6 @@ namespace BrightAkademie.Business.Concrete
             if (course != null)
             {
                 course.Trainer = await _trainerRepository.GetByIdAsync(course.TrainerId);
-
                 var courseDto = _mapper.Map<CourseDto>(course);
                 return Response<CourseDto>.Success(courseDto, 200);
             }

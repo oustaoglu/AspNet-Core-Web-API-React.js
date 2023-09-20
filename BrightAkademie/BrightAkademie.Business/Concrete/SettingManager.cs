@@ -34,12 +34,12 @@ namespace BrightAkademie.Business.Concrete
 
         public async Task<Response<NoContent>> DeleteAsync(int id)
         {
-            var deleteSetting = await _settingRepository.GetByIdAsync(id);
-            if (deleteSetting == null)
+            var deletedSetting = await _settingRepository.GetByIdAsync(id);
+            if (deletedSetting == null)
             {
                 return Response<NoContent>.Fail("Böyle bir ayar yok", 401);
             }
-            _settingRepository.Delete(deleteSetting);
+            _settingRepository.Delete(deletedSetting);
             return Response<NoContent>.Success(200);
         }
 

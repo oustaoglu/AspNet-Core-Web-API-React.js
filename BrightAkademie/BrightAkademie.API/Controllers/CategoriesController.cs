@@ -34,15 +34,23 @@ namespace BrightAkademie.API.Controllers
         public async Task<IActionResult> GetByIdCategories(int id)
         {
             var response = await _categoryManager.GetByIdAsync(id);
-            var jsonResult = JsonSerializer.Serialize(response);
-            return Ok(jsonResult);
+            if (response.IsSucceeded)
+            {
+                var jsonResult = JsonSerializer.Serialize(response);
+                return Ok(jsonResult);
+            }
+            return NotFound();
         }
 
         [HttpPost]
         public async Task<IActionResult> CreateCategories(CategoryCreateDto categoryCreateDto)
         {
             var response = await _categoryManager.CreateAsync(categoryCreateDto);
-            return CreateActionResult(response);
+            if (response.IsSucceeded)
+            {
+                return CreateActionResult(response);
+            }
+            return BadRequest();
         }
 
         [HttpPut]
