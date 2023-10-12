@@ -21,6 +21,7 @@ namespace BrightAkademie.Data.Concrete.EFCore.Configs
                 new CourseCategory { CourseId = 4, CategoryId = 1 },
                 new CourseCategory { CourseId = 5, CategoryId = 1 },
                 new CourseCategory { CourseId = 6, CategoryId = 2 },
+                new CourseCategory { CourseId = 7, CategoryId = 2 },
                 new CourseCategory { CourseId = 8, CategoryId = 2 },
                 new CourseCategory { CourseId = 9, CategoryId = 2 },
                 new CourseCategory { CourseId = 10, CategoryId = 3 },

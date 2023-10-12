@@ -9,6 +9,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
+builder.Services.AddRouting(r => r.LowercaseUrls = true);
+
 builder.Services.AddDbContext<BrightAkademieContext>(options => options.UseSqlite(builder.Configuration.GetConnectionString("SqliteConnection")));
 
 builder.Services.AddScoped<ICategoryService, CategoryManager>();
@@ -16,12 +18,16 @@ builder.Services.AddScoped<ICourseService, CourseManager>();
 builder.Services.AddScoped<ISettingService, SettingManager>();
 builder.Services.AddScoped<ITraineeService, TraineeManager>();
 builder.Services.AddScoped<ITrainerService, TrainerManager>();
+builder.Services.AddScoped<ICartService, CartManager>();
+builder.Services.AddScoped<ICartItemService, CartItemManager>();
 
 builder.Services.AddScoped<ICategoryRepository, EfCoreCategoryRepository>();
 builder.Services.AddScoped<ICourseRepository, EfCoreCourseRepository>();
 builder.Services.AddScoped<ISettingRepository, EfCoreSettingRepository>();
 builder.Services.AddScoped<ITraineeRepository, EfCoreTraineeRepository>();
 builder.Services.AddScoped<ITrainerRepository, EfCoreTrainerRepository>();
+builder.Services.AddScoped<ICartRepository, EfCoreCartRepository>();
+builder.Services.AddScoped<ICartItemRepository, EfCoreCartItemRepository>();
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 

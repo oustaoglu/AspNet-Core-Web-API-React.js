@@ -17,6 +17,58 @@ namespace BrightAkademie.Data.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.10");
 
+            modelBuilder.Entity("BrightAkademie.Entity.Concrete.Cart", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("ModifiedDate")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Carts");
+                });
+
+            modelBuilder.Entity("BrightAkademie.Entity.Concrete.CartItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("CartId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("CourseId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CartId");
+
+                    b.HasIndex("CourseId");
+
+                    b.ToTable("CartItems");
+                });
+
             modelBuilder.Entity("BrightAkademie.Entity.Concrete.Category", b =>
                 {
                     b.Property<int>("Id")
@@ -55,77 +107,77 @@ namespace BrightAkademie.Data.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2023, 9, 20, 16, 7, 35, 815, DateTimeKind.Local).AddTicks(9579),
+                            CreatedDate = new DateTime(2023, 10, 3, 16, 42, 19, 647, DateTimeKind.Local).AddTicks(5784),
                             Description = "Yazılım geliştirme, bilgisayar programlarının tasarımı, oluşturulması ve sürdürülmesi sürecidir. Bu süreç, kullanıcı ihtiyaçlarını karşılamak, işlevsellik sağlamak ve teknolojik çözümler üretmek için kodlama, test etme ve dağıtma adımlarını içerir.",
                             IsActive = true,
                             IsDeleted = false,
-                            ModifiedDate = new DateTime(2023, 9, 20, 16, 7, 35, 815, DateTimeKind.Local).AddTicks(9591),
+                            ModifiedDate = new DateTime(2023, 10, 3, 16, 42, 19, 647, DateTimeKind.Local).AddTicks(5799),
                             Name = "Yazılım Geliştime",
                             Url = "yazilim-gelistirme"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2023, 9, 20, 16, 7, 35, 815, DateTimeKind.Local).AddTicks(9594),
+                            CreatedDate = new DateTime(2023, 10, 3, 16, 42, 19, 647, DateTimeKind.Local).AddTicks(5803),
                             Description = "Mobil uygulama geliştirme, mobil platformlarda çalışabilen kullanışlı ve etkileşimli yazılım uygulamalarının tasarımı, oluşturulması ve dağıtılması sürecidir. Bu süreç, kullanıcı ihtiyaçlarını karşılamak, sorunlara çözüm sunmak ve kullanıcı deneyimini geliştirmek için programlama, arayüz tasarımı, test etme ve dağıtma adımlarını içerir.",
                             IsActive = true,
                             IsDeleted = false,
-                            ModifiedDate = new DateTime(2023, 9, 20, 16, 7, 35, 815, DateTimeKind.Local).AddTicks(9594),
+                            ModifiedDate = new DateTime(2023, 10, 3, 16, 42, 19, 647, DateTimeKind.Local).AddTicks(5803),
                             Name = "Mobil Uygulama Geliştirme",
                             Url = "mobil-uygulama-gelistirme"
                         },
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2023, 9, 20, 16, 7, 35, 815, DateTimeKind.Local).AddTicks(9595),
+                            CreatedDate = new DateTime(2023, 10, 3, 16, 42, 19, 647, DateTimeKind.Local).AddTicks(5804),
                             Description = "Oyun geliştirme, video oyunlarının tasarımı, programlaması ve oluşturulması sürecidir. Bu süreç, oyun kavramının belirlenmesi, hikaye yazımı, karakter tasarımı, dünya oluşturma, grafik ve ses tasarımı, oyun mekaniği ve kullanıcı arayüzü gibi aşamaları içerir.",
                             IsActive = true,
                             IsDeleted = false,
-                            ModifiedDate = new DateTime(2023, 9, 20, 16, 7, 35, 815, DateTimeKind.Local).AddTicks(9596),
+                            ModifiedDate = new DateTime(2023, 10, 3, 16, 42, 19, 647, DateTimeKind.Local).AddTicks(5804),
                             Name = "Oyun Geliştime",
                             Url = "oyun-gelistirme"
                         },
                         new
                         {
                             Id = 4,
-                            CreatedDate = new DateTime(2023, 9, 20, 16, 7, 35, 815, DateTimeKind.Local).AddTicks(9596),
+                            CreatedDate = new DateTime(2023, 10, 3, 16, 42, 19, 647, DateTimeKind.Local).AddTicks(5805),
                             Description = "Web, dünya genelinde bilgilere erişim sağlayan ve kullanıcıların çeşitli hizmetlere bağlanmasını mümkün kılan bir ağdır. Web, HTML, CSS ve JavaScript gibi teknolojilerle oluşturulan web siteleri ve web uygulamaları aracılığıyla çalışır.",
                             IsActive = true,
                             IsDeleted = false,
-                            ModifiedDate = new DateTime(2023, 9, 20, 16, 7, 35, 815, DateTimeKind.Local).AddTicks(9597),
+                            ModifiedDate = new DateTime(2023, 10, 3, 16, 42, 19, 647, DateTimeKind.Local).AddTicks(5806),
                             Name = "Web",
                             Url = "web"
                         },
                         new
                         {
                             Id = 5,
-                            CreatedDate = new DateTime(2023, 9, 20, 16, 7, 35, 815, DateTimeKind.Local).AddTicks(9598),
+                            CreatedDate = new DateTime(2023, 10, 3, 16, 42, 19, 647, DateTimeKind.Local).AddTicks(5806),
                             Description = "Veritabanı, yapılandırılmış verilerin depolandığı ve yönetildiği bir elektronik sistemdir. Veritabanları, bilgiyi organize etmek, erişmek, güncellemek ve analiz etmek için kullanılır. İşletmeler, kuruluşlar ve web uygulamaları gibi birçok alan veritabanlarını kullanır.",
                             IsActive = true,
                             IsDeleted = false,
-                            ModifiedDate = new DateTime(2023, 9, 20, 16, 7, 35, 815, DateTimeKind.Local).AddTicks(9598),
+                            ModifiedDate = new DateTime(2023, 10, 3, 16, 42, 19, 647, DateTimeKind.Local).AddTicks(5807),
                             Name = "Veritabanı",
                             Url = "veritabani"
                         },
                         new
                         {
                             Id = 6,
-                            CreatedDate = new DateTime(2023, 9, 20, 16, 7, 35, 815, DateTimeKind.Local).AddTicks(9599),
+                            CreatedDate = new DateTime(2023, 10, 3, 16, 42, 19, 647, DateTimeKind.Local).AddTicks(5808),
                             Description = "DevOps, yazılım geliştirme ve işletim süreçlerini birleştirerek, yazılım projelerinin daha hızlı, güvenilir ve sürekli bir şekilde dağıtılmasını sağlayan bir yaklaşımdır. Bu metodoloji, geliştirme (Development) ve işletim (Operations) ekipleri arasında işbirliği ve iletişimi teşvik eder.",
                             IsActive = true,
                             IsDeleted = false,
-                            ModifiedDate = new DateTime(2023, 9, 20, 16, 7, 35, 815, DateTimeKind.Local).AddTicks(9599),
+                            ModifiedDate = new DateTime(2023, 10, 3, 16, 42, 19, 647, DateTimeKind.Local).AddTicks(5808),
                             Name = "DevOps",
                             Url = "devops"
                         },
                         new
                         {
                             Id = 7,
-                            CreatedDate = new DateTime(2023, 9, 20, 16, 7, 35, 815, DateTimeKind.Local).AddTicks(9600),
+                            CreatedDate = new DateTime(2023, 10, 3, 16, 42, 19, 647, DateTimeKind.Local).AddTicks(5809),
                             Description = "Bulut, internet üzerinde sunulan paylaşımlı bilgi işlem kaynaklarını ifade eder. Bulut hizmetleri, sunucular, depolama, veritabanları, ağ altyapısı ve uygulama hizmetleri gibi kaynaklara erişimi kolaylaştırır. Kullanıcılar, istedikleri zaman istedikleri yerden bu kaynaklara güvenli bir şekilde erişebilir ve ihtiyaçlarına göre ölçeklendirebilir.",
                             IsActive = true,
                             IsDeleted = false,
-                            ModifiedDate = new DateTime(2023, 9, 20, 16, 7, 35, 815, DateTimeKind.Local).AddTicks(9600),
+                            ModifiedDate = new DateTime(2023, 10, 3, 16, 42, 19, 647, DateTimeKind.Local).AddTicks(5809),
                             Name = "Bulut",
                             Url = "bulut"
                         });
@@ -223,20 +275,20 @@ namespace BrightAkademie.Data.Migrations
                         {
                             Id = 1,
                             CourseLevel = "Easy",
-                            CreatedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3596),
+                            CreatedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(450),
                             Description = "Yazılım dersi, bilgisayar bilimlerinin önemli bir alanıdır ve öğrencilere temel bilgisayar programlama, algoritma oluşturma, veri yapıları, yazılım mühendisliği ve uygulama geliştirme konularında bilgi sağlar. Bu ders, öğrencilere problem çözme becerileri kazandırarak mantıksal düşünce ve analitik yeteneklerini geliştirir. Yazılım dersi aynı zamanda modern teknoloji dünyasında önemli bir role sahip olan yazılım süreçlerini, proje yönetimini ve test etme yöntemlerini de kapsar. Öğrenciler, çeşitli programlama dilleri ve yazılım araçlarını kullanarak uygulamalar geliştirerek pratik deneyim elde eder. Bu ders, gelecekteki teknoloji liderleri ve yazılım geliştiricileri için temel bir adımdır.",
                             Earnings = "Kod Yazma",
-                            End = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3606),
+                            End = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(459),
                             Evaluation = 5m,
                             ImageUrl = "1.jpg",
                             IsActive = true,
                             IsDeleted = false,
                             IsHome = true,
                             Location = "Barbaros Bulvarı Yıldız İş Hanı No: 9 Kat: 3 Beşiktaş - İstanbul",
-                            ModifiedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3600),
+                            ModifiedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(452),
                             Name = ".NET (.NET Core, MVC, Web API)",
                             Price = 100m,
-                            Start = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3605),
+                            Start = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(457),
                             Statues = "Tamamlandı.",
                             Time = "4",
                             TotalTime = "200",
@@ -247,20 +299,20 @@ namespace BrightAkademie.Data.Migrations
                         {
                             Id = 2,
                             CourseLevel = "Easy",
-                            CreatedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3611),
+                            CreatedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(464),
                             Description = "Yazılım dersi, bilgisayar bilimlerinin önemli bir alanıdır ve öğrencilere temel bilgisayar programlama, algoritma oluşturma, veri yapıları, yazılım mühendisliği ve uygulama geliştirme konularında bilgi sağlar. Bu ders, öğrencilere problem çözme becerileri kazandırarak mantıksal düşünce ve analitik yeteneklerini geliştirir. Yazılım dersi aynı zamanda modern teknoloji dünyasında önemli bir role sahip olan yazılım süreçlerini, proje yönetimini ve test etme yöntemlerini de kapsar. Öğrenciler, çeşitli programlama dilleri ve yazılım araçlarını kullanarak uygulamalar geliştirerek pratik deneyim elde eder. Bu ders, gelecekteki teknoloji liderleri ve yazılım geliştiricileri için temel bir adımdır.",
                             Earnings = "Kod Yazma",
-                            End = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3612),
+                            End = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(466),
                             Evaluation = 5m,
                             ImageUrl = "2.jpg",
                             IsActive = true,
                             IsDeleted = false,
                             IsHome = true,
                             Location = "Barbaros Bulvarı Yıldız İş Hanı No: 9 Kat: 3 Beşiktaş - İstanbul",
-                            ModifiedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3611),
+                            ModifiedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(465),
                             Name = "Java (Spring, Java SE, Java EE)",
                             Price = 100m,
-                            Start = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3612),
+                            Start = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(466),
                             Statues = "Tamamlandı.",
                             Time = "4",
                             TotalTime = "200",
@@ -271,20 +323,20 @@ namespace BrightAkademie.Data.Migrations
                         {
                             Id = 3,
                             CourseLevel = "Easy",
-                            CreatedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3615),
+                            CreatedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(469),
                             Description = "Yazılım dersi, bilgisayar bilimlerinin önemli bir alanıdır ve öğrencilere temel bilgisayar programlama, algoritma oluşturma, veri yapıları, yazılım mühendisliği ve uygulama geliştirme konularında bilgi sağlar. Bu ders, öğrencilere problem çözme becerileri kazandırarak mantıksal düşünce ve analitik yeteneklerini geliştirir. Yazılım dersi aynı zamanda modern teknoloji dünyasında önemli bir role sahip olan yazılım süreçlerini, proje yönetimini ve test etme yöntemlerini de kapsar. Öğrenciler, çeşitli programlama dilleri ve yazılım araçlarını kullanarak uygulamalar geliştirerek pratik deneyim elde eder. Bu ders, gelecekteki teknoloji liderleri ve yazılım geliştiricileri için temel bir adımdır.",
                             Earnings = "Kod Yazma",
-                            End = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3616),
+                            End = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(470),
                             Evaluation = 5m,
                             ImageUrl = "3.png",
                             IsActive = true,
                             IsDeleted = false,
                             IsHome = true,
                             Location = "Barbaros Bulvarı Yıldız İş Hanı No: 9 Kat: 3 Beşiktaş - İstanbul",
-                            ModifiedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3615),
+                            ModifiedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(469),
                             Name = "Python",
                             Price = 100m,
-                            Start = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3616),
+                            Start = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(470),
                             Statues = "Tamamlandı.",
                             Time = "4",
                             TotalTime = "200",
@@ -295,20 +347,20 @@ namespace BrightAkademie.Data.Migrations
                         {
                             Id = 4,
                             CourseLevel = "Easy",
-                            CreatedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3618),
+                            CreatedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(472),
                             Description = "Yazılım dersi, bilgisayar bilimlerinin önemli bir alanıdır ve öğrencilere temel bilgisayar programlama, algoritma oluşturma, veri yapıları, yazılım mühendisliği ve uygulama geliştirme konularında bilgi sağlar. Bu ders, öğrencilere problem çözme becerileri kazandırarak mantıksal düşünce ve analitik yeteneklerini geliştirir. Yazılım dersi aynı zamanda modern teknoloji dünyasında önemli bir role sahip olan yazılım süreçlerini, proje yönetimini ve test etme yöntemlerini de kapsar. Öğrenciler, çeşitli programlama dilleri ve yazılım araçlarını kullanarak uygulamalar geliştirerek pratik deneyim elde eder. Bu ders, gelecekteki teknoloji liderleri ve yazılım geliştiricileri için temel bir adımdır.",
                             Earnings = "Kod Yazma",
-                            End = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3620),
+                            End = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(474),
                             Evaluation = 5m,
                             ImageUrl = "4.jpeg",
                             IsActive = true,
                             IsDeleted = false,
                             IsHome = true,
                             Location = "Barbaros Bulvarı Yıldız İş Hanı No: 9 Kat: 3 Beşiktaş - İstanbul",
-                            ModifiedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3618),
+                            ModifiedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(472),
                             Name = "JavaScript",
                             Price = 100m,
-                            Start = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3619),
+                            Start = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(473),
                             Statues = "Tamamlandı.",
                             Time = "4",
                             TotalTime = "200",
@@ -319,20 +371,20 @@ namespace BrightAkademie.Data.Migrations
                         {
                             Id = 5,
                             CourseLevel = "Easy",
-                            CreatedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3621),
+                            CreatedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(475),
                             Description = "Yazılım dersi, bilgisayar bilimlerinin önemli bir alanıdır ve öğrencilere temel bilgisayar programlama, algoritma oluşturma, veri yapıları, yazılım mühendisliği ve uygulama geliştirme konularında bilgi sağlar. Bu ders, öğrencilere problem çözme becerileri kazandırarak mantıksal düşünce ve analitik yeteneklerini geliştirir. Yazılım dersi aynı zamanda modern teknoloji dünyasında önemli bir role sahip olan yazılım süreçlerini, proje yönetimini ve test etme yöntemlerini de kapsar. Öğrenciler, çeşitli programlama dilleri ve yazılım araçlarını kullanarak uygulamalar geliştirerek pratik deneyim elde eder. Bu ders, gelecekteki teknoloji liderleri ve yazılım geliştiricileri için temel bir adımdır.",
                             Earnings = "Kod Yazma",
-                            End = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3623),
+                            End = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(477),
                             Evaluation = 5m,
                             ImageUrl = "5.jpg",
                             IsActive = true,
                             IsDeleted = false,
                             IsHome = true,
                             Location = "Barbaros Bulvarı Yıldız İş Hanı No: 9 Kat: 3 Beşiktaş - İstanbul",
-                            ModifiedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3621),
+                            ModifiedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(476),
                             Name = "C/C++",
                             Price = 100m,
-                            Start = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3622),
+                            Start = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(476),
                             Statues = "Açılacak.",
                             Time = "4",
                             TotalTime = "200",
@@ -343,20 +395,20 @@ namespace BrightAkademie.Data.Migrations
                         {
                             Id = 6,
                             CourseLevel = "Easy",
-                            CreatedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3624),
+                            CreatedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(478),
                             Description = "Yazılım dersi, bilgisayar bilimlerinin önemli bir alanıdır ve öğrencilere temel bilgisayar programlama, algoritma oluşturma, veri yapıları, yazılım mühendisliği ve uygulama geliştirme konularında bilgi sağlar. Bu ders, öğrencilere problem çözme becerileri kazandırarak mantıksal düşünce ve analitik yeteneklerini geliştirir. Yazılım dersi aynı zamanda modern teknoloji dünyasında önemli bir role sahip olan yazılım süreçlerini, proje yönetimini ve test etme yöntemlerini de kapsar. Öğrenciler, çeşitli programlama dilleri ve yazılım araçlarını kullanarak uygulamalar geliştirerek pratik deneyim elde eder. Bu ders, gelecekteki teknoloji liderleri ve yazılım geliştiricileri için temel bir adımdır.",
                             Earnings = "Kod Yazma",
-                            End = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3626),
+                            End = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(480),
                             Evaluation = 5m,
                             ImageUrl = "6.png",
                             IsActive = true,
                             IsDeleted = false,
                             IsHome = true,
                             Location = "Barbaros Bulvarı Yıldız İş Hanı No: 9 Kat: 3 Beşiktaş - İstanbul",
-                            ModifiedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3625),
+                            ModifiedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(479),
                             Name = "iOS & Android",
                             Price = 100m,
-                            Start = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3625),
+                            Start = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(480),
                             Statues = "Açılacak.",
                             Time = "4",
                             TotalTime = "200",
@@ -367,20 +419,20 @@ namespace BrightAkademie.Data.Migrations
                         {
                             Id = 7,
                             CourseLevel = "Easy",
-                            CreatedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3627),
+                            CreatedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(482),
                             Description = "Yazılım dersi, bilgisayar bilimlerinin önemli bir alanıdır ve öğrencilere temel bilgisayar programlama, algoritma oluşturma, veri yapıları, yazılım mühendisliği ve uygulama geliştirme konularında bilgi sağlar. Bu ders, öğrencilere problem çözme becerileri kazandırarak mantıksal düşünce ve analitik yeteneklerini geliştirir. Yazılım dersi aynı zamanda modern teknoloji dünyasında önemli bir role sahip olan yazılım süreçlerini, proje yönetimini ve test etme yöntemlerini de kapsar. Öğrenciler, çeşitli programlama dilleri ve yazılım araçlarını kullanarak uygulamalar geliştirerek pratik deneyim elde eder. Bu ders, gelecekteki teknoloji liderleri ve yazılım geliştiricileri için temel bir adımdır.",
                             Earnings = "Kod Yazma",
-                            End = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3629),
+                            End = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(483),
                             Evaluation = 5m,
                             ImageUrl = "7.png",
                             IsActive = true,
                             IsDeleted = false,
                             IsHome = true,
                             Location = "Barbaros Bulvarı Yıldız İş Hanı No: 9 Kat: 3 Beşiktaş - İstanbul",
-                            ModifiedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3628),
+                            ModifiedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(482),
                             Name = "React Native",
                             Price = 100m,
-                            Start = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3628),
+                            Start = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(483),
                             Statues = "Açılacak.",
                             Time = "4",
                             TotalTime = "200",
@@ -391,20 +443,20 @@ namespace BrightAkademie.Data.Migrations
                         {
                             Id = 8,
                             CourseLevel = "Easy",
-                            CreatedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3630),
+                            CreatedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(485),
                             Description = "Yazılım dersi, bilgisayar bilimlerinin önemli bir alanıdır ve öğrencilere temel bilgisayar programlama, algoritma oluşturma, veri yapıları, yazılım mühendisliği ve uygulama geliştirme konularında bilgi sağlar. Bu ders, öğrencilere problem çözme becerileri kazandırarak mantıksal düşünce ve analitik yeteneklerini geliştirir. Yazılım dersi aynı zamanda modern teknoloji dünyasında önemli bir role sahip olan yazılım süreçlerini, proje yönetimini ve test etme yöntemlerini de kapsar. Öğrenciler, çeşitli programlama dilleri ve yazılım araçlarını kullanarak uygulamalar geliştirerek pratik deneyim elde eder. Bu ders, gelecekteki teknoloji liderleri ve yazılım geliştiricileri için temel bir adımdır.",
                             Earnings = "Kod Yazma",
-                            End = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3632),
+                            End = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(486),
                             Evaluation = 5m,
                             ImageUrl = "8.png",
                             IsActive = true,
                             IsDeleted = false,
                             IsHome = true,
                             Location = "Barbaros Bulvarı Yıldız İş Hanı No: 9 Kat: 3 Beşiktaş - İstanbul",
-                            ModifiedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3631),
+                            ModifiedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(485),
                             Name = "Flutter",
                             Price = 100m,
-                            Start = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3631),
+                            Start = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(486),
                             Statues = "Açılacak.",
                             Time = "4",
                             TotalTime = "200",
@@ -415,20 +467,20 @@ namespace BrightAkademie.Data.Migrations
                         {
                             Id = 9,
                             CourseLevel = "Medium",
-                            CreatedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3633),
+                            CreatedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(511),
                             Description = "Yazılım dersi, bilgisayar bilimlerinin önemli bir alanıdır ve öğrencilere temel bilgisayar programlama, algoritma oluşturma, veri yapıları, yazılım mühendisliği ve uygulama geliştirme konularında bilgi sağlar. Bu ders, öğrencilere problem çözme becerileri kazandırarak mantıksal düşünce ve analitik yeteneklerini geliştirir. Yazılım dersi aynı zamanda modern teknoloji dünyasında önemli bir role sahip olan yazılım süreçlerini, proje yönetimini ve test etme yöntemlerini de kapsar. Öğrenciler, çeşitli programlama dilleri ve yazılım araçlarını kullanarak uygulamalar geliştirerek pratik deneyim elde eder. Bu ders, gelecekteki teknoloji liderleri ve yazılım geliştiricileri için temel bir adımdır.",
                             Earnings = "Kod Yazma",
-                            End = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3635),
+                            End = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(513),
                             Evaluation = 5m,
                             ImageUrl = "9.jpg",
                             IsActive = true,
                             IsDeleted = false,
                             IsHome = true,
                             Location = "Barbaros Bulvarı Yıldız İş Hanı No: 9 Kat: 3 Beşiktaş - İstanbul",
-                            ModifiedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3634),
+                            ModifiedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(511),
                             Name = "Ionic",
                             Price = 100m,
-                            Start = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3634),
+                            Start = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(512),
                             Statues = "Açılacak.",
                             Time = "4",
                             TotalTime = "200",
@@ -439,20 +491,20 @@ namespace BrightAkademie.Data.Migrations
                         {
                             Id = 10,
                             CourseLevel = "Medium",
-                            CreatedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3636),
+                            CreatedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(515),
                             Description = "Yazılım dersi, bilgisayar bilimlerinin önemli bir alanıdır ve öğrencilere temel bilgisayar programlama, algoritma oluşturma, veri yapıları, yazılım mühendisliği ve uygulama geliştirme konularında bilgi sağlar. Bu ders, öğrencilere problem çözme becerileri kazandırarak mantıksal düşünce ve analitik yeteneklerini geliştirir. Yazılım dersi aynı zamanda modern teknoloji dünyasında önemli bir role sahip olan yazılım süreçlerini, proje yönetimini ve test etme yöntemlerini de kapsar. Öğrenciler, çeşitli programlama dilleri ve yazılım araçlarını kullanarak uygulamalar geliştirerek pratik deneyim elde eder. Bu ders, gelecekteki teknoloji liderleri ve yazılım geliştiricileri için temel bir adımdır.",
                             Earnings = "Kod Yazma",
-                            End = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3638),
+                            End = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(516),
                             Evaluation = 5m,
                             ImageUrl = "10.jpeg",
                             IsActive = true,
                             IsDeleted = false,
                             IsHome = true,
                             Location = "Barbaros Bulvarı Yıldız İş Hanı No: 9 Kat: 3 Beşiktaş - İstanbul",
-                            ModifiedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3637),
+                            ModifiedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(515),
                             Name = "Unity",
                             Price = 100m,
-                            Start = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3637),
+                            Start = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(516),
                             Statues = "Açılacak.",
                             Time = "4",
                             TotalTime = "200",
@@ -463,20 +515,20 @@ namespace BrightAkademie.Data.Migrations
                         {
                             Id = 11,
                             CourseLevel = "Medium",
-                            CreatedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3639),
+                            CreatedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(518),
                             Description = "Yazılım dersi, bilgisayar bilimlerinin önemli bir alanıdır ve öğrencilere temel bilgisayar programlama, algoritma oluşturma, veri yapıları, yazılım mühendisliği ve uygulama geliştirme konularında bilgi sağlar. Bu ders, öğrencilere problem çözme becerileri kazandırarak mantıksal düşünce ve analitik yeteneklerini geliştirir. Yazılım dersi aynı zamanda modern teknoloji dünyasında önemli bir role sahip olan yazılım süreçlerini, proje yönetimini ve test etme yöntemlerini de kapsar. Öğrenciler, çeşitli programlama dilleri ve yazılım araçlarını kullanarak uygulamalar geliştirerek pratik deneyim elde eder. Bu ders, gelecekteki teknoloji liderleri ve yazılım geliştiricileri için temel bir adımdır.",
                             Earnings = "Kod Yazma",
-                            End = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3641),
+                            End = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(519),
                             Evaluation = 5m,
                             ImageUrl = "11.png",
                             IsActive = true,
                             IsDeleted = false,
                             IsHome = true,
                             Location = "Barbaros Bulvarı Yıldız İş Hanı No: 9 Kat: 3 Beşiktaş - İstanbul",
-                            ModifiedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3640),
+                            ModifiedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(518),
                             Name = "Unreal Engine",
                             Price = 100m,
-                            Start = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3640),
+                            Start = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(519),
                             Statues = "Açılacak.",
                             Time = "4",
                             TotalTime = "200",
@@ -487,20 +539,20 @@ namespace BrightAkademie.Data.Migrations
                         {
                             Id = 12,
                             CourseLevel = "Medium",
-                            CreatedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3642),
+                            CreatedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(521),
                             Description = "Yazılım dersi, bilgisayar bilimlerinin önemli bir alanıdır ve öğrencilere temel bilgisayar programlama, algoritma oluşturma, veri yapıları, yazılım mühendisliği ve uygulama geliştirme konularında bilgi sağlar. Bu ders, öğrencilere problem çözme becerileri kazandırarak mantıksal düşünce ve analitik yeteneklerini geliştirir. Yazılım dersi aynı zamanda modern teknoloji dünyasında önemli bir role sahip olan yazılım süreçlerini, proje yönetimini ve test etme yöntemlerini de kapsar. Öğrenciler, çeşitli programlama dilleri ve yazılım araçlarını kullanarak uygulamalar geliştirerek pratik deneyim elde eder. Bu ders, gelecekteki teknoloji liderleri ve yazılım geliştiricileri için temel bir adımdır.",
                             Earnings = "Kod Yazma",
-                            End = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3644),
+                            End = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(522),
                             Evaluation = 5m,
                             ImageUrl = "12.png",
                             IsActive = true,
                             IsDeleted = false,
                             IsHome = true,
                             Location = "Barbaros Bulvarı Yıldız İş Hanı No: 9 Kat: 3 Beşiktaş - İstanbul",
-                            ModifiedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3643),
+                            ModifiedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(521),
                             Name = "GameMaker Studio",
                             Price = 100m,
-                            Start = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3643),
+                            Start = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(522),
                             Statues = "Açılacak.",
                             Time = "4",
                             TotalTime = "200",
@@ -511,20 +563,20 @@ namespace BrightAkademie.Data.Migrations
                         {
                             Id = 13,
                             CourseLevel = "Medium",
-                            CreatedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3645),
+                            CreatedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(524),
                             Description = "Yazılım dersi, bilgisayar bilimlerinin önemli bir alanıdır ve öğrencilere temel bilgisayar programlama, algoritma oluşturma, veri yapıları, yazılım mühendisliği ve uygulama geliştirme konularında bilgi sağlar. Bu ders, öğrencilere problem çözme becerileri kazandırarak mantıksal düşünce ve analitik yeteneklerini geliştirir. Yazılım dersi aynı zamanda modern teknoloji dünyasında önemli bir role sahip olan yazılım süreçlerini, proje yönetimini ve test etme yöntemlerini de kapsar. Öğrenciler, çeşitli programlama dilleri ve yazılım araçlarını kullanarak uygulamalar geliştirerek pratik deneyim elde eder. Bu ders, gelecekteki teknoloji liderleri ve yazılım geliştiricileri için temel bir adımdır.",
                             Earnings = "Kod Yazma",
-                            End = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3647),
+                            End = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(525),
                             Evaluation = 5m,
                             ImageUrl = "13.jpeg",
                             IsActive = true,
                             IsDeleted = false,
                             IsHome = true,
                             Location = "Barbaros Bulvarı Yıldız İş Hanı No: 9 Kat: 3 Beşiktaş - İstanbul",
-                            ModifiedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3646),
+                            ModifiedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(524),
                             Name = "Buildbox",
                             Price = 100m,
-                            Start = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3646),
+                            Start = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(525),
                             Statues = "Açılacak.",
                             Time = "4",
                             TotalTime = "200",
@@ -535,20 +587,20 @@ namespace BrightAkademie.Data.Migrations
                         {
                             Id = 14,
                             CourseLevel = "Medium",
-                            CreatedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3648),
+                            CreatedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(527),
                             Description = "Yazılım dersi, bilgisayar bilimlerinin önemli bir alanıdır ve öğrencilere temel bilgisayar programlama, algoritma oluşturma, veri yapıları, yazılım mühendisliği ve uygulama geliştirme konularında bilgi sağlar. Bu ders, öğrencilere problem çözme becerileri kazandırarak mantıksal düşünce ve analitik yeteneklerini geliştirir. Yazılım dersi aynı zamanda modern teknoloji dünyasında önemli bir role sahip olan yazılım süreçlerini, proje yönetimini ve test etme yöntemlerini de kapsar. Öğrenciler, çeşitli programlama dilleri ve yazılım araçlarını kullanarak uygulamalar geliştirerek pratik deneyim elde eder. Bu ders, gelecekteki teknoloji liderleri ve yazılım geliştiricileri için temel bir adımdır.",
                             Earnings = "Kod Yazma",
-                            End = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3650),
+                            End = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(529),
                             Evaluation = 5m,
                             ImageUrl = "14.png",
                             IsActive = true,
                             IsDeleted = false,
                             IsHome = true,
                             Location = "Barbaros Bulvarı Yıldız İş Hanı No: 9 Kat: 3 Beşiktaş - İstanbul",
-                            ModifiedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3649),
+                            ModifiedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(527),
                             Name = "PHP",
                             Price = 100m,
-                            Start = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3649),
+                            Start = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(528),
                             Statues = "Açılacak.",
                             Time = "4",
                             TotalTime = "200",
@@ -559,20 +611,20 @@ namespace BrightAkademie.Data.Migrations
                         {
                             Id = 15,
                             CourseLevel = "Medium",
-                            CreatedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3652),
+                            CreatedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(530),
                             Description = "Yazılım dersi, bilgisayar bilimlerinin önemli bir alanıdır ve öğrencilere temel bilgisayar programlama, algoritma oluşturma, veri yapıları, yazılım mühendisliği ve uygulama geliştirme konularında bilgi sağlar. Bu ders, öğrencilere problem çözme becerileri kazandırarak mantıksal düşünce ve analitik yeteneklerini geliştirir. Yazılım dersi aynı zamanda modern teknoloji dünyasında önemli bir role sahip olan yazılım süreçlerini, proje yönetimini ve test etme yöntemlerini de kapsar. Öğrenciler, çeşitli programlama dilleri ve yazılım araçlarını kullanarak uygulamalar geliştirerek pratik deneyim elde eder. Bu ders, gelecekteki teknoloji liderleri ve yazılım geliştiricileri için temel bir adımdır.",
                             Earnings = "Kod Yazma",
-                            End = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3653),
+                            End = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(532),
                             Evaluation = 5m,
                             ImageUrl = "15.jpeg",
                             IsActive = true,
                             IsDeleted = false,
                             IsHome = true,
                             Location = "Barbaros Bulvarı Yıldız İş Hanı No: 9 Kat: 3 Beşiktaş - İstanbul",
-                            ModifiedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3652),
+                            ModifiedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(531),
                             Name = "React",
                             Price = 100m,
-                            Start = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3652),
+                            Start = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(531),
                             Statues = "Açılacak.",
                             Time = "4",
                             TotalTime = "200",
@@ -583,20 +635,20 @@ namespace BrightAkademie.Data.Migrations
                         {
                             Id = 16,
                             CourseLevel = "Medium",
-                            CreatedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3654),
+                            CreatedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(535),
                             Description = "Yazılım dersi, bilgisayar bilimlerinin önemli bir alanıdır ve öğrencilere temel bilgisayar programlama, algoritma oluşturma, veri yapıları, yazılım mühendisliği ve uygulama geliştirme konularında bilgi sağlar. Bu ders, öğrencilere problem çözme becerileri kazandırarak mantıksal düşünce ve analitik yeteneklerini geliştirir. Yazılım dersi aynı zamanda modern teknoloji dünyasında önemli bir role sahip olan yazılım süreçlerini, proje yönetimini ve test etme yöntemlerini de kapsar. Öğrenciler, çeşitli programlama dilleri ve yazılım araçlarını kullanarak uygulamalar geliştirerek pratik deneyim elde eder. Bu ders, gelecekteki teknoloji liderleri ve yazılım geliştiricileri için temel bir adımdır.",
                             Earnings = "Kod Yazma",
-                            End = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3656),
+                            End = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(536),
                             Evaluation = 5m,
                             ImageUrl = "16.png",
                             IsActive = true,
                             IsDeleted = false,
                             IsHome = true,
                             Location = "Barbaros Bulvarı Yıldız İş Hanı No: 9 Kat: 3 Beşiktaş - İstanbul",
-                            ModifiedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3655),
+                            ModifiedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(535),
                             Name = "Angular",
                             Price = 100m,
-                            Start = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3655),
+                            Start = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(536),
                             Statues = "Açılacak.",
                             Time = "4",
                             TotalTime = "200",
@@ -607,20 +659,20 @@ namespace BrightAkademie.Data.Migrations
                         {
                             Id = 17,
                             CourseLevel = "Medium",
-                            CreatedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3657),
+                            CreatedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(538),
                             Description = "Yazılım dersi, bilgisayar bilimlerinin önemli bir alanıdır ve öğrencilere temel bilgisayar programlama, algoritma oluşturma, veri yapıları, yazılım mühendisliği ve uygulama geliştirme konularında bilgi sağlar. Bu ders, öğrencilere problem çözme becerileri kazandırarak mantıksal düşünce ve analitik yeteneklerini geliştirir. Yazılım dersi aynı zamanda modern teknoloji dünyasında önemli bir role sahip olan yazılım süreçlerini, proje yönetimini ve test etme yöntemlerini de kapsar. Öğrenciler, çeşitli programlama dilleri ve yazılım araçlarını kullanarak uygulamalar geliştirerek pratik deneyim elde eder. Bu ders, gelecekteki teknoloji liderleri ve yazılım geliştiricileri için temel bir adımdır.",
                             Earnings = "Kod Yazma",
-                            End = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3659),
+                            End = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(539),
                             Evaluation = 5m,
                             ImageUrl = "17.png",
                             IsActive = true,
                             IsDeleted = false,
                             IsHome = true,
                             Location = "Barbaros Bulvarı Yıldız İş Hanı No: 9 Kat: 3 Beşiktaş - İstanbul",
-                            ModifiedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3658),
+                            ModifiedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(538),
                             Name = "Node.js",
                             Price = 100m,
-                            Start = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3658),
+                            Start = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(539),
                             Statues = "Açılacak.",
                             Time = "4",
                             TotalTime = "200",
@@ -631,20 +683,20 @@ namespace BrightAkademie.Data.Migrations
                         {
                             Id = 18,
                             CourseLevel = "Medium",
-                            CreatedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3661),
+                            CreatedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(541),
                             Description = "Yazılım dersi, bilgisayar bilimlerinin önemli bir alanıdır ve öğrencilere temel bilgisayar programlama, algoritma oluşturma, veri yapıları, yazılım mühendisliği ve uygulama geliştirme konularında bilgi sağlar. Bu ders, öğrencilere problem çözme becerileri kazandırarak mantıksal düşünce ve analitik yeteneklerini geliştirir. Yazılım dersi aynı zamanda modern teknoloji dünyasında önemli bir role sahip olan yazılım süreçlerini, proje yönetimini ve test etme yöntemlerini de kapsar. Öğrenciler, çeşitli programlama dilleri ve yazılım araçlarını kullanarak uygulamalar geliştirerek pratik deneyim elde eder. Bu ders, gelecekteki teknoloji liderleri ve yazılım geliştiricileri için temel bir adımdır.",
                             Earnings = "Kod Yazma",
-                            End = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3662),
+                            End = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(542),
                             Evaluation = 5m,
                             ImageUrl = "18.jpg",
                             IsActive = true,
                             IsDeleted = false,
                             IsHome = true,
                             Location = "Barbaros Bulvarı Yıldız İş Hanı No: 9 Kat: 3 Beşiktaş - İstanbul",
-                            ModifiedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3661),
+                            ModifiedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(541),
                             Name = "Microsoft SQL Server",
                             Price = 100m,
-                            Start = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3662),
+                            Start = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(542),
                             Statues = "Açılacak.",
                             Time = "4",
                             TotalTime = "200",
@@ -655,20 +707,20 @@ namespace BrightAkademie.Data.Migrations
                         {
                             Id = 19,
                             CourseLevel = "Medium",
-                            CreatedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3664),
+                            CreatedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(544),
                             Description = "Yazılım dersi, bilgisayar bilimlerinin önemli bir alanıdır ve öğrencilere temel bilgisayar programlama, algoritma oluşturma, veri yapıları, yazılım mühendisliği ve uygulama geliştirme konularında bilgi sağlar. Bu ders, öğrencilere problem çözme becerileri kazandırarak mantıksal düşünce ve analitik yeteneklerini geliştirir. Yazılım dersi aynı zamanda modern teknoloji dünyasında önemli bir role sahip olan yazılım süreçlerini, proje yönetimini ve test etme yöntemlerini de kapsar. Öğrenciler, çeşitli programlama dilleri ve yazılım araçlarını kullanarak uygulamalar geliştirerek pratik deneyim elde eder. Bu ders, gelecekteki teknoloji liderleri ve yazılım geliştiricileri için temel bir adımdır.",
                             Earnings = "Kod Yazma",
-                            End = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3665),
+                            End = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(546),
                             Evaluation = 5m,
                             ImageUrl = "19.png",
                             IsActive = true,
                             IsDeleted = false,
                             IsHome = true,
                             Location = "Barbaros Bulvarı Yıldız İş Hanı No: 9 Kat: 3 Beşiktaş - İstanbul",
-                            ModifiedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3664),
+                            ModifiedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(544),
                             Name = "MySQL",
                             Price = 100m,
-                            Start = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3665),
+                            Start = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(545),
                             Statues = "Açılacak.",
                             Time = "4",
                             TotalTime = "200",
@@ -679,20 +731,20 @@ namespace BrightAkademie.Data.Migrations
                         {
                             Id = 20,
                             CourseLevel = "Medium",
-                            CreatedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3667),
+                            CreatedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(547),
                             Description = "Yazılım dersi, bilgisayar bilimlerinin önemli bir alanıdır ve öğrencilere temel bilgisayar programlama, algoritma oluşturma, veri yapıları, yazılım mühendisliği ve uygulama geliştirme konularında bilgi sağlar. Bu ders, öğrencilere problem çözme becerileri kazandırarak mantıksal düşünce ve analitik yeteneklerini geliştirir. Yazılım dersi aynı zamanda modern teknoloji dünyasında önemli bir role sahip olan yazılım süreçlerini, proje yönetimini ve test etme yöntemlerini de kapsar. Öğrenciler, çeşitli programlama dilleri ve yazılım araçlarını kullanarak uygulamalar geliştirerek pratik deneyim elde eder. Bu ders, gelecekteki teknoloji liderleri ve yazılım geliştiricileri için temel bir adımdır.",
                             Earnings = "Kod Yazma",
-                            End = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3668),
+                            End = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(549),
                             Evaluation = 5m,
                             ImageUrl = "20.png",
                             IsActive = true,
                             IsDeleted = false,
                             IsHome = true,
                             Location = "Barbaros Bulvarı Yıldız İş Hanı No: 9 Kat: 3 Beşiktaş - İstanbul",
-                            ModifiedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3667),
+                            ModifiedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(548),
                             Name = "PostgreSQL",
                             Price = 100m,
-                            Start = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3668),
+                            Start = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(548),
                             Statues = "Açılacak.",
                             Time = "4",
                             TotalTime = "200",
@@ -703,20 +755,20 @@ namespace BrightAkademie.Data.Migrations
                         {
                             Id = 21,
                             CourseLevel = "Senior",
-                            CreatedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3670),
+                            CreatedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(551),
                             Description = "Yazılım dersi, bilgisayar bilimlerinin önemli bir alanıdır ve öğrencilere temel bilgisayar programlama, algoritma oluşturma, veri yapıları, yazılım mühendisliği ve uygulama geliştirme konularında bilgi sağlar. Bu ders, öğrencilere problem çözme becerileri kazandırarak mantıksal düşünce ve analitik yeteneklerini geliştirir. Yazılım dersi aynı zamanda modern teknoloji dünyasında önemli bir role sahip olan yazılım süreçlerini, proje yönetimini ve test etme yöntemlerini de kapsar. Öğrenciler, çeşitli programlama dilleri ve yazılım araçlarını kullanarak uygulamalar geliştirerek pratik deneyim elde eder. Bu ders, gelecekteki teknoloji liderleri ve yazılım geliştiricileri için temel bir adımdır.",
                             Earnings = "Kod Yazma",
-                            End = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3671),
+                            End = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(552),
                             Evaluation = 5m,
                             ImageUrl = "21.png",
                             IsActive = true,
                             IsDeleted = false,
                             IsHome = true,
                             Location = "Barbaros Bulvarı Yıldız İş Hanı No: 9 Kat: 3 Beşiktaş - İstanbul",
-                            ModifiedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3670),
+                            ModifiedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(551),
                             Name = "SQLite",
                             Price = 100m,
-                            Start = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3671),
+                            Start = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(552),
                             Statues = "Açılacak.",
                             Time = "4",
                             TotalTime = "200",
@@ -727,20 +779,20 @@ namespace BrightAkademie.Data.Migrations
                         {
                             Id = 22,
                             CourseLevel = "Senior",
-                            CreatedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3673),
+                            CreatedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(555),
                             Description = "Yazılım dersi, bilgisayar bilimlerinin önemli bir alanıdır ve öğrencilere temel bilgisayar programlama, algoritma oluşturma, veri yapıları, yazılım mühendisliği ve uygulama geliştirme konularında bilgi sağlar. Bu ders, öğrencilere problem çözme becerileri kazandırarak mantıksal düşünce ve analitik yeteneklerini geliştirir. Yazılım dersi aynı zamanda modern teknoloji dünyasında önemli bir role sahip olan yazılım süreçlerini, proje yönetimini ve test etme yöntemlerini de kapsar. Öğrenciler, çeşitli programlama dilleri ve yazılım araçlarını kullanarak uygulamalar geliştirerek pratik deneyim elde eder. Bu ders, gelecekteki teknoloji liderleri ve yazılım geliştiricileri için temel bir adımdır.",
                             Earnings = "Kod Yazma",
-                            End = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3674),
+                            End = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(556),
                             Evaluation = 5m,
                             ImageUrl = "22.png",
                             IsActive = true,
                             IsDeleted = false,
                             IsHome = true,
                             Location = "Barbaros Bulvarı Yıldız İş Hanı No: 9 Kat: 3 Beşiktaş - İstanbul",
-                            ModifiedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3673),
+                            ModifiedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(555),
                             Name = "Oracle",
                             Price = 100m,
-                            Start = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3674),
+                            Start = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(556),
                             Statues = "Devam Ediyor.",
                             Time = "4",
                             TotalTime = "200",
@@ -751,20 +803,20 @@ namespace BrightAkademie.Data.Migrations
                         {
                             Id = 23,
                             CourseLevel = "Senior",
-                            CreatedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3676),
+                            CreatedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(558),
                             Description = "Yazılım dersi, bilgisayar bilimlerinin önemli bir alanıdır ve öğrencilere temel bilgisayar programlama, algoritma oluşturma, veri yapıları, yazılım mühendisliği ve uygulama geliştirme konularında bilgi sağlar. Bu ders, öğrencilere problem çözme becerileri kazandırarak mantıksal düşünce ve analitik yeteneklerini geliştirir. Yazılım dersi aynı zamanda modern teknoloji dünyasında önemli bir role sahip olan yazılım süreçlerini, proje yönetimini ve test etme yöntemlerini de kapsar. Öğrenciler, çeşitli programlama dilleri ve yazılım araçlarını kullanarak uygulamalar geliştirerek pratik deneyim elde eder. Bu ders, gelecekteki teknoloji liderleri ve yazılım geliştiricileri için temel bir adımdır.",
                             Earnings = "Kod Yazma",
-                            End = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3677),
+                            End = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(559),
                             Evaluation = 5m,
                             ImageUrl = "23.png",
                             IsActive = true,
                             IsDeleted = false,
                             IsHome = true,
                             Location = "Barbaros Bulvarı Yıldız İş Hanı No: 9 Kat: 3 Beşiktaş - İstanbul",
-                            ModifiedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3676),
+                            ModifiedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(558),
                             Name = "Docker",
                             Price = 100m,
-                            Start = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3677),
+                            Start = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(559),
                             Statues = "Devam Ediyor.",
                             Time = "4",
                             TotalTime = "200",
@@ -775,20 +827,20 @@ namespace BrightAkademie.Data.Migrations
                         {
                             Id = 24,
                             CourseLevel = "Senior",
-                            CreatedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3679),
+                            CreatedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(561),
                             Description = "Yazılım dersi, bilgisayar bilimlerinin önemli bir alanıdır ve öğrencilere temel bilgisayar programlama, algoritma oluşturma, veri yapıları, yazılım mühendisliği ve uygulama geliştirme konularında bilgi sağlar. Bu ders, öğrencilere problem çözme becerileri kazandırarak mantıksal düşünce ve analitik yeteneklerini geliştirir. Yazılım dersi aynı zamanda modern teknoloji dünyasında önemli bir role sahip olan yazılım süreçlerini, proje yönetimini ve test etme yöntemlerini de kapsar. Öğrenciler, çeşitli programlama dilleri ve yazılım araçlarını kullanarak uygulamalar geliştirerek pratik deneyim elde eder. Bu ders, gelecekteki teknoloji liderleri ve yazılım geliştiricileri için temel bir adımdır.",
                             Earnings = "Kod Yazma",
-                            End = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3680),
+                            End = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(562),
                             Evaluation = 5m,
                             ImageUrl = "24.png",
                             IsActive = true,
                             IsDeleted = false,
                             IsHome = true,
                             Location = "Barbaros Bulvarı Yıldız İş Hanı No: 9 Kat: 3 Beşiktaş - İstanbul",
-                            ModifiedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3679),
+                            ModifiedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(561),
                             Name = "Jenkins",
                             Price = 100m,
-                            Start = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3680),
+                            Start = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(562),
                             Statues = "Devam Ediyor.",
                             Time = "4",
                             TotalTime = "200",
@@ -799,20 +851,20 @@ namespace BrightAkademie.Data.Migrations
                         {
                             Id = 25,
                             CourseLevel = "Senior",
-                            CreatedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3682),
+                            CreatedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(564),
                             Description = "Yazılım dersi, bilgisayar bilimlerinin önemli bir alanıdır ve öğrencilere temel bilgisayar programlama, algoritma oluşturma, veri yapıları, yazılım mühendisliği ve uygulama geliştirme konularında bilgi sağlar. Bu ders, öğrencilere problem çözme becerileri kazandırarak mantıksal düşünce ve analitik yeteneklerini geliştirir. Yazılım dersi aynı zamanda modern teknoloji dünyasında önemli bir role sahip olan yazılım süreçlerini, proje yönetimini ve test etme yöntemlerini de kapsar. Öğrenciler, çeşitli programlama dilleri ve yazılım araçlarını kullanarak uygulamalar geliştirerek pratik deneyim elde eder. Bu ders, gelecekteki teknoloji liderleri ve yazılım geliştiricileri için temel bir adımdır.",
                             Earnings = "Kod Yazma",
-                            End = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3683),
+                            End = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(565),
                             Evaluation = 5m,
                             ImageUrl = "25.png",
                             IsActive = true,
                             IsDeleted = false,
                             IsHome = true,
                             Location = "Barbaros Bulvarı Yıldız İş Hanı No: 9 Kat: 3 Beşiktaş - İstanbul",
-                            ModifiedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3682),
+                            ModifiedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(564),
                             Name = "Ansible",
                             Price = 100m,
-                            Start = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3683),
+                            Start = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(565),
                             Statues = "Devam Ediyor.",
                             Time = "4",
                             TotalTime = "200",
@@ -823,20 +875,20 @@ namespace BrightAkademie.Data.Migrations
                         {
                             Id = 26,
                             CourseLevel = "Senior",
-                            CreatedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3685),
+                            CreatedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(567),
                             Description = "Yazılım dersi, bilgisayar bilimlerinin önemli bir alanıdır ve öğrencilere temel bilgisayar programlama, algoritma oluşturma, veri yapıları, yazılım mühendisliği ve uygulama geliştirme konularında bilgi sağlar. Bu ders, öğrencilere problem çözme becerileri kazandırarak mantıksal düşünce ve analitik yeteneklerini geliştirir. Yazılım dersi aynı zamanda modern teknoloji dünyasında önemli bir role sahip olan yazılım süreçlerini, proje yönetimini ve test etme yöntemlerini de kapsar. Öğrenciler, çeşitli programlama dilleri ve yazılım araçlarını kullanarak uygulamalar geliştirerek pratik deneyim elde eder. Bu ders, gelecekteki teknoloji liderleri ve yazılım geliştiricileri için temel bir adımdır.",
                             Earnings = "Kod Yazma",
-                            End = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3686),
+                            End = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(568),
                             Evaluation = 5m,
                             ImageUrl = "26.jpeg",
                             IsActive = true,
                             IsDeleted = false,
                             IsHome = true,
                             Location = "Barbaros Bulvarı Yıldız İş Hanı No: 9 Kat: 3 Beşiktaş - İstanbul",
-                            ModifiedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3685),
+                            ModifiedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(567),
                             Name = "Sonarcube",
                             Price = 100m,
-                            Start = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3686),
+                            Start = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(568),
                             Statues = "Devam Ediyor.",
                             Time = "4",
                             TotalTime = "200",
@@ -847,20 +899,20 @@ namespace BrightAkademie.Data.Migrations
                         {
                             Id = 27,
                             CourseLevel = "Senior",
-                            CreatedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3688),
+                            CreatedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(570),
                             Description = "Yazılım dersi, bilgisayar bilimlerinin önemli bir alanıdır ve öğrencilere temel bilgisayar programlama, algoritma oluşturma, veri yapıları, yazılım mühendisliği ve uygulama geliştirme konularında bilgi sağlar. Bu ders, öğrencilere problem çözme becerileri kazandırarak mantıksal düşünce ve analitik yeteneklerini geliştirir. Yazılım dersi aynı zamanda modern teknoloji dünyasında önemli bir role sahip olan yazılım süreçlerini, proje yönetimini ve test etme yöntemlerini de kapsar. Öğrenciler, çeşitli programlama dilleri ve yazılım araçlarını kullanarak uygulamalar geliştirerek pratik deneyim elde eder. Bu ders, gelecekteki teknoloji liderleri ve yazılım geliştiricileri için temel bir adımdır.",
                             Earnings = "Kod Yazma",
-                            End = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3689),
+                            End = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(572),
                             Evaluation = 5m,
                             ImageUrl = "27.png",
                             IsActive = true,
                             IsDeleted = false,
                             IsHome = true,
                             Location = "Barbaros Bulvarı Yıldız İş Hanı No: 9 Kat: 3 Beşiktaş - İstanbul",
-                            ModifiedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3688),
+                            ModifiedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(570),
                             Name = "AWS",
                             Price = 100m,
-                            Start = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3689),
+                            Start = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(571),
                             Statues = "Devam Ediyor.",
                             Time = "4",
                             TotalTime = "200",
@@ -871,20 +923,20 @@ namespace BrightAkademie.Data.Migrations
                         {
                             Id = 28,
                             CourseLevel = "Senior",
-                            CreatedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3691),
+                            CreatedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(573),
                             Description = "Yazılım dersi, bilgisayar bilimlerinin önemli bir alanıdır ve öğrencilere temel bilgisayar programlama, algoritma oluşturma, veri yapıları, yazılım mühendisliği ve uygulama geliştirme konularında bilgi sağlar. Bu ders, öğrencilere problem çözme becerileri kazandırarak mantıksal düşünce ve analitik yeteneklerini geliştirir. Yazılım dersi aynı zamanda modern teknoloji dünyasında önemli bir role sahip olan yazılım süreçlerini, proje yönetimini ve test etme yöntemlerini de kapsar. Öğrenciler, çeşitli programlama dilleri ve yazılım araçlarını kullanarak uygulamalar geliştirerek pratik deneyim elde eder. Bu ders, gelecekteki teknoloji liderleri ve yazılım geliştiricileri için temel bir adımdır.",
                             Earnings = "Kod Yazma",
-                            End = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3692),
+                            End = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(575),
                             Evaluation = 5m,
                             ImageUrl = "28.png",
                             IsActive = true,
                             IsDeleted = false,
                             IsHome = true,
                             Location = "Barbaros Bulvarı Yıldız İş Hanı No: 9 Kat: 3 Beşiktaş - İstanbul",
-                            ModifiedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3691),
+                            ModifiedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(574),
                             Name = "Azure",
                             Price = 100m,
-                            Start = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3692),
+                            Start = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(574),
                             Statues = "Devam Ediyor.",
                             Time = "4",
                             TotalTime = "200",
@@ -895,20 +947,20 @@ namespace BrightAkademie.Data.Migrations
                         {
                             Id = 29,
                             CourseLevel = "Senior",
-                            CreatedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3694),
+                            CreatedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(576),
                             Description = "Yazılım dersi, bilgisayar bilimlerinin önemli bir alanıdır ve öğrencilere temel bilgisayar programlama, algoritma oluşturma, veri yapıları, yazılım mühendisliği ve uygulama geliştirme konularında bilgi sağlar. Bu ders, öğrencilere problem çözme becerileri kazandırarak mantıksal düşünce ve analitik yeteneklerini geliştirir. Yazılım dersi aynı zamanda modern teknoloji dünyasında önemli bir role sahip olan yazılım süreçlerini, proje yönetimini ve test etme yöntemlerini de kapsar. Öğrenciler, çeşitli programlama dilleri ve yazılım araçlarını kullanarak uygulamalar geliştirerek pratik deneyim elde eder. Bu ders, gelecekteki teknoloji liderleri ve yazılım geliştiricileri için temel bir adımdır.",
                             Earnings = "Kod Yazma",
-                            End = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3695),
+                            End = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(578),
                             Evaluation = 5m,
                             ImageUrl = "29.png",
                             IsActive = true,
                             IsDeleted = false,
                             IsHome = true,
                             Location = "Barbaros Bulvarı Yıldız İş Hanı No: 9 Kat: 3 Beşiktaş - İstanbul",
-                            ModifiedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3694),
+                            ModifiedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(577),
                             Name = "Serverless",
                             Price = 100m,
-                            Start = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3695),
+                            Start = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(577),
                             Statues = "Devam Ediyor.",
                             Time = "4",
                             TotalTime = "200",
@@ -919,20 +971,20 @@ namespace BrightAkademie.Data.Migrations
                         {
                             Id = 30,
                             CourseLevel = "Senior",
-                            CreatedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3697),
+                            CreatedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(579),
                             Description = "Yazılım dersi, bilgisayar bilimlerinin önemli bir alanıdır ve öğrencilere temel bilgisayar programlama, algoritma oluşturma, veri yapıları, yazılım mühendisliği ve uygulama geliştirme konularında bilgi sağlar. Bu ders, öğrencilere problem çözme becerileri kazandırarak mantıksal düşünce ve analitik yeteneklerini geliştirir. Yazılım dersi aynı zamanda modern teknoloji dünyasında önemli bir role sahip olan yazılım süreçlerini, proje yönetimini ve test etme yöntemlerini de kapsar. Öğrenciler, çeşitli programlama dilleri ve yazılım araçlarını kullanarak uygulamalar geliştirerek pratik deneyim elde eder. Bu ders, gelecekteki teknoloji liderleri ve yazılım geliştiricileri için temel bir adımdır.",
                             Earnings = "Kod Yazma",
-                            End = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3698),
+                            End = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(581),
                             Evaluation = 5m,
                             ImageUrl = "30.png",
                             IsActive = true,
                             IsDeleted = false,
                             IsHome = true,
                             Location = "Barbaros Bulvarı Yıldız İş Hanı No: 9 Kat: 3 Beşiktaş - İstanbul",
-                            ModifiedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3697),
+                            ModifiedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(580),
                             Name = "Cloud Storage",
                             Price = 100m,
-                            Start = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(3698),
+                            Start = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(581),
                             Statues = "Devam Ediyor.",
                             Time = "4",
                             TotalTime = "200",
@@ -984,6 +1036,11 @@ namespace BrightAkademie.Data.Migrations
                         new
                         {
                             CourseId = 6,
+                            CategoryId = 2
+                        },
+                        new
+                        {
+                            CourseId = 7,
                             CategoryId = 2
                         },
                         new
@@ -1314,11 +1371,11 @@ namespace BrightAkademie.Data.Migrations
                             About = "Eğitim",
                             Adress = "Barbaros Bulvarı Yıldız İş Hanı No: 9 Kat: 3 Beşiktaş - İstanbul",
                             CompanyName = "Bright Akademie",
-                            CreatedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(6790),
+                            CreatedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(3724),
                             Information = "Eğitim",
                             IsActive = true,
                             IsDeleted = false,
-                            ModifiedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(6792),
+                            ModifiedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(3727),
                             Questions = "Eğitim"
                         });
                 });
@@ -1369,104 +1426,104 @@ namespace BrightAkademie.Data.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(7940),
+                            CreatedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(4950),
                             Education = ".NET (.NET Core, MVC, Web API)",
                             FirstName = "Onur",
                             IsActive = true,
                             IsDeleted = false,
                             LastName = "Ustaoğlu",
-                            ModifiedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(7942),
+                            ModifiedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(4951),
                             PhotoUrl = "1.png",
                             Url = "onur-ustaoglu"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(7945),
+                            CreatedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(4955),
                             Education = "Java (Spring, Java SE, Java EE)",
                             FirstName = "Serkan",
                             IsActive = true,
                             IsDeleted = false,
                             LastName = "Selek",
-                            ModifiedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(7946),
+                            ModifiedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(4956),
                             PhotoUrl = "1.png",
                             Url = "serkan-selek"
                         },
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(7947),
+                            CreatedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(4957),
                             Education = "Python",
                             FirstName = "Furkan",
                             IsActive = true,
                             IsDeleted = false,
                             LastName = "Yüksel",
-                            ModifiedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(7947),
+                            ModifiedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(4957),
                             PhotoUrl = "1.png",
                             Url = "furkan-yuksel"
                         },
                         new
                         {
                             Id = 4,
-                            CreatedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(7948),
+                            CreatedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(4958),
                             Education = "JavaScript",
                             FirstName = "Ali",
                             IsActive = true,
                             IsDeleted = false,
                             LastName = "Turan",
-                            ModifiedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(7949),
+                            ModifiedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(4959),
                             PhotoUrl = "1.png",
                             Url = "ali-turan"
                         },
                         new
                         {
                             Id = 5,
-                            CreatedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(7950),
+                            CreatedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(4960),
                             Education = "C/C++",
                             FirstName = "Mert",
                             IsActive = true,
                             IsDeleted = false,
                             LastName = "Tutkun",
-                            ModifiedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(7950),
+                            ModifiedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(4960),
                             PhotoUrl = "1.png",
                             Url = "mert-tutkun"
                         },
                         new
                         {
                             Id = 6,
-                            CreatedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(7951),
+                            CreatedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(4961),
                             Education = "iOS & Android",
                             FirstName = "Alim",
                             IsActive = true,
                             IsDeleted = false,
                             LastName = "Yalçınkaya",
-                            ModifiedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(7951),
+                            ModifiedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(4962),
                             PhotoUrl = "1.png",
                             Url = "alim-yalcinkaya"
                         },
                         new
                         {
                             Id = 7,
-                            CreatedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(7952),
+                            CreatedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(4963),
                             Education = "Node.js",
                             FirstName = "Uğurcan",
                             IsActive = true,
                             IsDeleted = false,
                             LastName = "Çildiz",
-                            ModifiedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(7952),
+                            ModifiedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(4963),
                             PhotoUrl = "1.png",
                             Url = "ugurcan-cildiz"
                         },
                         new
                         {
                             Id = 8,
-                            CreatedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(7953),
+                            CreatedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(4964),
                             Education = "React",
                             FirstName = "Rıdvan",
                             IsActive = true,
                             IsDeleted = false,
                             LastName = "Karakaya",
-                            ModifiedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(7954),
+                            ModifiedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(4964),
                             PhotoUrl = "1.png",
                             Url = "rıdvan-karakaya"
                         });
@@ -1538,7 +1595,7 @@ namespace BrightAkademie.Data.Migrations
                             Id = 1,
                             About = "Yazılım eğitimi, modern teknolojinin temelini oluşturan önemli bir süreçtir. Katılımcılara yazılım geliştirme süreçlerinde bilgi ve beceriler kazandırır.",
                             BirthOfYear = 1990,
-                            CreatedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(9149),
+                            CreatedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(6206),
                             Education = "",
                             Evaluation = 1m,
                             Experience = "",
@@ -1547,7 +1604,7 @@ namespace BrightAkademie.Data.Migrations
                             IsActive = true,
                             IsDeleted = false,
                             LastName = "Harmon",
-                            ModifiedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(9150),
+                            ModifiedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(6207),
                             PhotoUrl = "1.png",
                             Url = ""
                         },
@@ -1556,7 +1613,7 @@ namespace BrightAkademie.Data.Migrations
                             Id = 2,
                             About = "Yazılım eğitimi, modern teknolojinin temelini oluşturan önemli bir süreçtir. Katılımcılara yazılım geliştirme süreçlerinde bilgi ve beceriler kazandırır.",
                             BirthOfYear = 1990,
-                            CreatedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(9155),
+                            CreatedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(6214),
                             Education = "",
                             Evaluation = 1m,
                             Experience = "",
@@ -1565,7 +1622,7 @@ namespace BrightAkademie.Data.Migrations
                             IsActive = true,
                             IsDeleted = false,
                             LastName = "Burch",
-                            ModifiedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(9156),
+                            ModifiedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(6214),
                             PhotoUrl = "1.png",
                             Url = ""
                         },
@@ -1574,7 +1631,7 @@ namespace BrightAkademie.Data.Migrations
                             Id = 3,
                             About = "Yazılım eğitimi, modern teknolojinin temelini oluşturan önemli bir süreçtir. Katılımcılara yazılım geliştirme süreçlerinde bilgi ve beceriler kazandırır.",
                             BirthOfYear = 1985,
-                            CreatedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(9158),
+                            CreatedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(6217),
                             Education = "",
                             Evaluation = 1m,
                             Experience = "",
@@ -1583,7 +1640,7 @@ namespace BrightAkademie.Data.Migrations
                             IsActive = true,
                             IsDeleted = false,
                             LastName = "Beard",
-                            ModifiedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(9158),
+                            ModifiedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(6217),
                             PhotoUrl = "1.png",
                             Url = ""
                         },
@@ -1592,7 +1649,7 @@ namespace BrightAkademie.Data.Migrations
                             Id = 4,
                             About = "Yazılım eğitimi, modern teknolojinin temelini oluşturan önemli bir süreçtir. Katılımcılara yazılım geliştirme süreçlerinde bilgi ve beceriler kazandırır.",
                             BirthOfYear = 1982,
-                            CreatedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(9160),
+                            CreatedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(6219),
                             Education = "",
                             Evaluation = 1m,
                             Experience = "",
@@ -1601,7 +1658,7 @@ namespace BrightAkademie.Data.Migrations
                             IsActive = true,
                             IsDeleted = false,
                             LastName = "Wade",
-                            ModifiedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(9160),
+                            ModifiedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(6219),
                             PhotoUrl = "1.png",
                             Url = ""
                         },
@@ -1610,7 +1667,7 @@ namespace BrightAkademie.Data.Migrations
                             Id = 5,
                             About = "Yazılım eğitimi, modern teknolojinin temelini oluşturan önemli bir süreçtir. Katılımcılara yazılım geliştirme süreçlerinde bilgi ve beceriler kazandırır.",
                             BirthOfYear = 1988,
-                            CreatedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(9162),
+                            CreatedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(6221),
                             Education = "",
                             Evaluation = 1m,
                             Experience = "",
@@ -1619,7 +1676,7 @@ namespace BrightAkademie.Data.Migrations
                             IsActive = true,
                             IsDeleted = false,
                             LastName = "Hunt",
-                            ModifiedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(9162),
+                            ModifiedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(6221),
                             PhotoUrl = "1.png",
                             Url = ""
                         },
@@ -1628,7 +1685,7 @@ namespace BrightAkademie.Data.Migrations
                             Id = 6,
                             About = "Yazılım eğitimi, modern teknolojinin temelini oluşturan önemli bir süreçtir. Katılımcılara yazılım geliştirme süreçlerinde bilgi ve beceriler kazandırır.",
                             BirthOfYear = 1989,
-                            CreatedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(9163),
+                            CreatedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(6223),
                             Education = "",
                             Evaluation = 1m,
                             Experience = "",
@@ -1637,7 +1694,7 @@ namespace BrightAkademie.Data.Migrations
                             IsActive = true,
                             IsDeleted = false,
                             LastName = "Dazai",
-                            ModifiedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(9164),
+                            ModifiedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(6223),
                             PhotoUrl = "1.png",
                             Url = ""
                         },
@@ -1646,7 +1703,7 @@ namespace BrightAkademie.Data.Migrations
                             Id = 7,
                             About = "Yazılım eğitimi, modern teknolojinin temelini oluşturan önemli bir süreçtir. Katılımcılara yazılım geliştirme süreçlerinde bilgi ve beceriler kazandırır.",
                             BirthOfYear = 1983,
-                            CreatedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(9165),
+                            CreatedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(6225),
                             Education = "",
                             Evaluation = 1m,
                             Experience = "",
@@ -1655,7 +1712,7 @@ namespace BrightAkademie.Data.Migrations
                             IsActive = true,
                             IsDeleted = false,
                             LastName = "Salas",
-                            ModifiedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(9165),
+                            ModifiedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(6225),
                             PhotoUrl = "1.png",
                             Url = ""
                         },
@@ -1664,7 +1721,7 @@ namespace BrightAkademie.Data.Migrations
                             Id = 8,
                             About = "Yazılım eğitimi, modern teknolojinin temelini oluşturan önemli bir süreçtir. Katılımcılara yazılım geliştirme süreçlerinde bilgi ve beceriler kazandırır.",
                             BirthOfYear = 1982,
-                            CreatedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(9167),
+                            CreatedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(6226),
                             Education = "",
                             Evaluation = 1m,
                             Experience = "",
@@ -1673,7 +1730,7 @@ namespace BrightAkademie.Data.Migrations
                             IsActive = true,
                             IsDeleted = false,
                             LastName = "Haig",
-                            ModifiedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(9167),
+                            ModifiedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(6227),
                             PhotoUrl = "1.png",
                             Url = ""
                         },
@@ -1682,7 +1739,7 @@ namespace BrightAkademie.Data.Migrations
                             Id = 9,
                             About = "Yazılım eğitimi, modern teknolojinin temelini oluşturan önemli bir süreçtir. Katılımcılara yazılım geliştirme süreçlerinde bilgi ve beceriler kazandırır.",
                             BirthOfYear = 1982,
-                            CreatedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(9169),
+                            CreatedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(6228),
                             Education = "",
                             Evaluation = 1m,
                             Experience = "",
@@ -1691,7 +1748,7 @@ namespace BrightAkademie.Data.Migrations
                             IsActive = true,
                             IsDeleted = false,
                             LastName = "Hawkingan",
-                            ModifiedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(9169),
+                            ModifiedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(6228),
                             PhotoUrl = "1.png",
                             Url = ""
                         },
@@ -1700,7 +1757,7 @@ namespace BrightAkademie.Data.Migrations
                             Id = 10,
                             About = "Yazılım eğitimi, modern teknolojinin temelini oluşturan önemli bir süreçtir. Katılımcılara yazılım geliştirme süreçlerinde bilgi ve beceriler kazandırır.",
                             BirthOfYear = 1990,
-                            CreatedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(9170),
+                            CreatedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(6230),
                             Education = "",
                             Evaluation = 1m,
                             Experience = "",
@@ -1709,7 +1766,7 @@ namespace BrightAkademie.Data.Migrations
                             IsActive = true,
                             IsDeleted = false,
                             LastName = "Richmond",
-                            ModifiedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(9171),
+                            ModifiedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(6230),
                             PhotoUrl = "1.png",
                             Url = ""
                         },
@@ -1718,7 +1775,7 @@ namespace BrightAkademie.Data.Migrations
                             Id = 11,
                             About = "Yazılım eğitimi, modern teknolojinin temelini oluşturan önemli bir süreçtir. Katılımcılara yazılım geliştirme süreçlerinde bilgi ve beceriler kazandırır.",
                             BirthOfYear = 1983,
-                            CreatedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(9172),
+                            CreatedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(6232),
                             Education = "",
                             Evaluation = 1m,
                             Experience = "",
@@ -1727,7 +1784,7 @@ namespace BrightAkademie.Data.Migrations
                             IsActive = true,
                             IsDeleted = false,
                             LastName = "Ros",
-                            ModifiedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(9172),
+                            ModifiedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(6232),
                             PhotoUrl = "1.png",
                             Url = ""
                         },
@@ -1736,7 +1793,7 @@ namespace BrightAkademie.Data.Migrations
                             Id = 12,
                             About = "Yazılım eğitimi, modern teknolojinin temelini oluşturan önemli bir süreçtir. Katılımcılara yazılım geliştirme süreçlerinde bilgi ve beceriler kazandırır.",
                             BirthOfYear = 1991,
-                            CreatedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(9174),
+                            CreatedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(6233),
                             Education = "",
                             Evaluation = 1m,
                             Experience = "",
@@ -1745,7 +1802,7 @@ namespace BrightAkademie.Data.Migrations
                             IsActive = true,
                             IsDeleted = false,
                             LastName = "Talley",
-                            ModifiedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(9174),
+                            ModifiedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(6234),
                             PhotoUrl = "1.png",
                             Url = ""
                         },
@@ -1754,7 +1811,7 @@ namespace BrightAkademie.Data.Migrations
                             Id = 13,
                             About = "Yazılım eğitimi, modern teknolojinin temelini oluşturan önemli bir süreçtir. Katılımcılara yazılım geliştirme süreçlerinde bilgi ve beceriler kazandırır.",
                             BirthOfYear = 1979,
-                            CreatedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(9176),
+                            CreatedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(6235),
                             Education = "",
                             Evaluation = 1m,
                             Experience = "",
@@ -1763,7 +1820,7 @@ namespace BrightAkademie.Data.Migrations
                             IsActive = true,
                             IsDeleted = false,
                             LastName = "Sheppard",
-                            ModifiedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(9176),
+                            ModifiedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(6235),
                             PhotoUrl = "1.png",
                             Url = ""
                         },
@@ -1772,7 +1829,7 @@ namespace BrightAkademie.Data.Migrations
                             Id = 14,
                             About = "Yazılım eğitimi, modern teknolojinin temelini oluşturan önemli bir süreçtir. Katılımcılara yazılım geliştirme süreçlerinde bilgi ve beceriler kazandırır.",
                             BirthOfYear = 1978,
-                            CreatedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(9177),
+                            CreatedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(6237),
                             Education = "",
                             Evaluation = 1m,
                             Experience = "",
@@ -1781,7 +1838,7 @@ namespace BrightAkademie.Data.Migrations
                             IsActive = true,
                             IsDeleted = false,
                             LastName = "Farley",
-                            ModifiedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(9178),
+                            ModifiedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(6237),
                             PhotoUrl = "1.png",
                             Url = ""
                         },
@@ -1790,7 +1847,7 @@ namespace BrightAkademie.Data.Migrations
                             Id = 15,
                             About = "Yazılım eğitimi, modern teknolojinin temelini oluşturan önemli bir süreçtir. Katılımcılara yazılım geliştirme süreçlerinde bilgi ve beceriler kazandırır.",
                             BirthOfYear = 1991,
-                            CreatedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(9179),
+                            CreatedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(6239),
                             Education = "",
                             Evaluation = 1m,
                             Experience = "",
@@ -1799,10 +1856,111 @@ namespace BrightAkademie.Data.Migrations
                             IsActive = true,
                             IsDeleted = false,
                             LastName = "Wooten",
-                            ModifiedDate = new DateTime(2023, 9, 20, 16, 7, 35, 816, DateTimeKind.Local).AddTicks(9179),
+                            ModifiedDate = new DateTime(2023, 10, 3, 16, 42, 19, 648, DateTimeKind.Local).AddTicks(6239),
                             PhotoUrl = "1.png",
                             Url = ""
                         });
+                });
+
+            modelBuilder.Entity("BrightAkademie.Entity.Concrete.User", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("AccessFailedCount")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Address")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("City")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime?>("DateOfBirth")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("FirstName")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Gender")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("LastName")
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("LockoutEnabled")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("NormalizedEmail")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("NormalizedUserName")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("PhoneNumberConfirmed")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("SecurityStamp")
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("TwoFactorEnabled")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("UserName")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("User");
+                });
+
+            modelBuilder.Entity("BrightAkademie.Entity.Concrete.Cart", b =>
+                {
+                    b.HasOne("BrightAkademie.Entity.Concrete.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("BrightAkademie.Entity.Concrete.CartItem", b =>
+                {
+                    b.HasOne("BrightAkademie.Entity.Concrete.Cart", "Cart")
+                        .WithMany("CartItems")
+                        .HasForeignKey("CartId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BrightAkademie.Entity.Concrete.Course", "Course")
+                        .WithMany()
+                        .HasForeignKey("CourseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Cart");
+
+                    b.Navigation("Course");
                 });
 
             modelBuilder.Entity("BrightAkademie.Entity.Concrete.Course", b =>
@@ -1854,6 +2012,11 @@ namespace BrightAkademie.Data.Migrations
                     b.Navigation("Course");
 
                     b.Navigation("Trainee");
+                });
+
+            modelBuilder.Entity("BrightAkademie.Entity.Concrete.Cart", b =>
+                {
+                    b.Navigation("CartItems");
                 });
 
             modelBuilder.Entity("BrightAkademie.Entity.Concrete.Course", b =>

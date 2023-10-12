@@ -22,6 +22,8 @@ namespace BrightAkademie.Data.Concrete.EFCore.Contexts
         public DbSet<Setting> Settings { get; set; }
         public DbSet<Trainee> Trainees { get; set; }
         public DbSet<Trainer> Trainers { get; set; }
+        public DbSet<Cart> Carts { get; set; }
+        public DbSet<CartItem> CartItems { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
