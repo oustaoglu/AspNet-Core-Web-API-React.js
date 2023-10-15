@@ -1,19 +1,32 @@
-// pages/category/[id].js
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 
-const CategoryDetail = () => {
+const CategoryPage = () => {
     const router = useRouter();
     const { id } = router.query;
+    const [category, setCategory] = useState(null);
 
-    // Burada kategori ayrıntılarını API'den çekebilir ve görüntüleyebilirsiniz.
+    useEffect(() => {
+        // Kategori içeriğini yüklemek için API çağrısı yapabilirsiniz.
+        // Örnek bir API çağrısı:
+
+        fetch(`http://localhost:5034/api/categories/${id}`)
+            .then((response) => response.json())
+            .then((data) => setCategory(data));
+    }, [id]);
+
+    if (!category) {
+        return <p>Yükleniyor...</p>;
+    }
 
     return (
         <div>
-            <h1>Category Detail Page</h1>
-            <p>Category ID: {id}</p>
-            {/* Kategori ayrıntıları burada görüntülenebilir. */}
+            <h1>Kategori Sayfası - ID: {id}</h1>
+            <h2>Kategori Adı: {category.Name}</h2>
+            <p>Kategori Açıklaması: {category.Description}</p>
+            {/* Kategori içeriği gösterme kodu buraya gelebilir */}
         </div>
     );
 };
 
-export default CategoryDetail;
+export default CategoryPage;

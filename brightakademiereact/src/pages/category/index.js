@@ -1,4 +1,3 @@
-// pages/categories.js
 import CategoryList from '../components/CategoryList'; // Veya component yolunuzu buraya ekleyin.
 
 const Categories = () => {
