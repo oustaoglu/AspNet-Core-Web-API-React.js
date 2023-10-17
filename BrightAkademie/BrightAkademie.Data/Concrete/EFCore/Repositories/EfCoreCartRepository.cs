@@ -27,7 +27,7 @@ namespace BrightAkademie.Data.Concrete.EFCore.Repositories
             if (cart != null)
             {
                 var index = cart.CartItems.FindIndex(ci => ci.CourseId == bookId);
-                if (index < 0)//Kitap daha önceden sepete eklenmemişse
+                if (index < 0)//İçerik daha önceden sepete eklenmemişse
                 {
                     cart.CartItems.Add(new CartItem
                     {
@@ -36,7 +36,7 @@ namespace BrightAkademie.Data.Concrete.EFCore.Repositories
                         Quantity = quantity
                     });
                 }
-                else //Eğer kitap daha önceden sepete eklenmişse -- adedi arttıracağız
+                else //Eğer içerik daha önceden sepete eklenmişse -- adedi arttıracağız
                 {
                     cart.CartItems[index].Quantity += quantity;
                 }

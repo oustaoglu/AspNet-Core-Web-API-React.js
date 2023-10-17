@@ -10,7 +10,7 @@ const CategoryPage = () => {
         // Kategori içeriğini yüklemek için API çağrısı yapabilirsiniz.
         // Örnek bir API çağrısı:
 
-        fetch(`http://localhost:5034/api/categories/${id}`)
+        fetch(`http://localhost:5240/api/categories/${id}`)
             .then((response) => response.json())
             .then((data) => setCategory(data));
     }, [id]);

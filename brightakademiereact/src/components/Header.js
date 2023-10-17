@@ -14,6 +14,7 @@ const Header = () => {
                 <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
                     <Link href="/login" className="mr-5 hover:text-gray-900">Giriş Yap</Link>
                     <Link href="/register" className="mr-5 hover:text-gray-900">Kayıt Ol</Link>
+
                 </nav>
             </div>
         </header>

@@ -18,4 +18,8 @@
 	  <Folder Include="Models\" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <ProjectReference Include="..\BrightAkademie.Entity\BrightAkademie.Entity.csproj" />
+	</ItemGroup>
+
 </Project>

@@ -20,5 +20,12 @@ namespace BrightAkademie.Entity.Concrete
         public DateTime? DateOfBirth { get; set; }
         public string Address { get; set; }
         public string City { get; set; }
+        public string Education { get; set; }
+        public string Experience { get; set; }
+        public string Url { get; set; }
+        public string About { get; set; }
+        public string PhotoUrl { get; set; }
+        public string Field { get; set; }
+        public decimal Evaluation { get; set; }
     }
 }

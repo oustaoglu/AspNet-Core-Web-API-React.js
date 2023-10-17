@@ -1,13 +1,11 @@
 import React from 'react';
-import Header from './Header';
 import CourseList from './CourseList'; // Eğitim bilgilerini listeleyen bileşen
-import Footer from './Footer';
-import MainImage from './MainImage';
+import Carousel from './Carousel';
 
 const HomePage = () => {
     return (
         <div>
-            <MainImage />
+            <Carousel />
             <main >
                 <CourseList /> {/* Eğitim bilgilerini listeleyen bileşen */}
             </main>

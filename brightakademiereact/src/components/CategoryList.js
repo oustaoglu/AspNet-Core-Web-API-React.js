@@ -5,7 +5,7 @@ const CategoryList = () => {
     const [categories, setCategories] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:1907/api/categories')
+        fetch('http://localhost:5240/api/categories')
             .then((response) => response.json())
             .then((data) => setCategories(data.Data));
     }, []);

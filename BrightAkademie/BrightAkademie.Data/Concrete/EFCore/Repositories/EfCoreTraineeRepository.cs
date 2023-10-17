@@ -22,7 +22,7 @@ namespace BrightAkademie.Data.Concrete.EFCore.Repositories
 
         public async Task<bool> AnyAsync(int id)
         {
-            return await Context.Trainees.AnyAsync(x => x.Id == id);
+            return await Context.Trainees.AnyAsync(x => x.Id == id.ToString());
         }
 
         public async Task<List<Trainee>> GetAllTrainees(bool isDeleted, bool? isActive = null)

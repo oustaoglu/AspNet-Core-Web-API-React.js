@@ -9,3 +9,7 @@ C:\Git\AspNet-Core-Web-API-React.js\BrightAkademie\BrightAkademie.Shared\obj\Deb
 C:\Git\AspNet-Core-Web-API-React.js\BrightAkademie\BrightAkademie.Shared\obj\Debug\net7.0\refint\BrightAkademie.Shared.dll
 C:\Git\AspNet-Core-Web-API-React.js\BrightAkademie\BrightAkademie.Shared\obj\Debug\net7.0\BrightAkademie.Shared.pdb
 C:\Git\AspNet-Core-Web-API-React.js\BrightAkademie\BrightAkademie.Shared\obj\Debug\net7.0\ref\BrightAkademie.Shared.dll
+C:\Git\AspNet-Core-Web-API-React.js\BrightAkademie\BrightAkademie.Shared\bin\Debug\net7.0\BrightAkademie.Entity.dll
+C:\Git\AspNet-Core-Web-API-React.js\BrightAkademie\BrightAkademie.Shared\bin\Debug\net7.0\BrightAkademie.Entity.pdb
+C:\Git\AspNet-Core-Web-API-React.js\BrightAkademie\BrightAkademie.Shared\obj\Debug\net7.0\BrightAkademie.Shared.csproj.AssemblyReference.cache
+C:\Git\AspNet-Core-Web-API-React.js\BrightAkademie\BrightAkademie.Shared\obj\Debug\net7.0\BrightAkademie.Shared.csproj.CopyComplete

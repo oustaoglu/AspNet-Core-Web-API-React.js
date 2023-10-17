@@ -83,3 +83,5 @@ C:\Git\AspNet-Core-Web-API-React.js\BrightAkademie\BrightAkademie.API\obj\Debug\
 C:\Git\AspNet-Core-Web-API-React.js\BrightAkademie\BrightAkademie.API\obj\Debug\net7.0\BrightAkademie.API.pdb
 C:\Git\AspNet-Core-Web-API-React.js\BrightAkademie\BrightAkademie.API\obj\Debug\net7.0\BrightAkademie.API.genruntimeconfig.cache
 C:\Git\AspNet-Core-Web-API-React.js\BrightAkademie\BrightAkademie.API\obj\Debug\net7.0\ref\BrightAkademie.API.dll
+C:\Git\AspNet-Core-Web-API-React.js\BrightAkademie\BrightAkademie.API\bin\Debug\net7.0\Iyzipay.dll
+C:\Git\AspNet-Core-Web-API-React.js\BrightAkademie\BrightAkademie.API\bin\Debug\net7.0\Newtonsoft.Json.dll

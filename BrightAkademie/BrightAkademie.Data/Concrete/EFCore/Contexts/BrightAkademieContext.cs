@@ -1,5 +1,7 @@
 ﻿using BrightAkademie.Data.Concrete.EFCore.Configs;
+using BrightAkademie.Data.Concrete.EFCore.Extensions;
 using BrightAkademie.Entity.Concrete;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -9,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace BrightAkademie.Data.Concrete.EFCore.Contexts
 {
-    public class BrightAkademieContext : DbContext
+    public class BrightAkademieContext : IdentityDbContext<Trainee>
     {
         public BrightAkademieContext(DbContextOptions options) : base(options)
         {
@@ -24,10 +26,13 @@ namespace BrightAkademie.Data.Concrete.EFCore.Contexts
         public DbSet<Trainer> Trainers { get; set; }
         public DbSet<Cart> Carts { get; set; }
         public DbSet<CartItem> CartItems { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfigurationsFromAssembly(typeof(CategoryConfig).Assembly);
+            modelBuilder.SeedData();
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(CourseConfig).Assembly);
             base.OnModelCreating(modelBuilder);
         }
     }

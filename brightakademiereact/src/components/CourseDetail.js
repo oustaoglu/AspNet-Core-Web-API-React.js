@@ -5,7 +5,7 @@ function CourseDetail({ courseId }) {
 
     useEffect(() => {
         // courseId kullanarak API'den kurs verilerini alın
-        fetch(`http://localhost:1907/api/courses/${courseId}`)
+        fetch(`http://localhost:5240/api/courses/${courseId}`)
             .then((response) => response.json())
             .then((data) => {
                 // API yanıtındaki "data" alanını "course" state'ine atayın

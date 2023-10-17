@@ -37,7 +37,7 @@ namespace BrightAkademie.Data.Concrete.EFCore.Configs
             builder.HasData(
                new Trainee
                {
-                   Id = 1,
+                   Id = "1",
                    FirstName = "Onur",
                    LastName = "Ustaoğlu",
                    Education = ".NET (.NET Core, MVC, Web API)",
@@ -46,7 +46,7 @@ namespace BrightAkademie.Data.Concrete.EFCore.Configs
                },
                new Trainee
                {
-                   Id = 2,
+                   Id = "2",
                    FirstName = "Serkan",
                    LastName = "Selek",
                    Education = "Java (Spring, Java SE, Java EE)",
@@ -55,7 +55,7 @@ namespace BrightAkademie.Data.Concrete.EFCore.Configs
                },
                new Trainee
                {
-                   Id = 3,
+                   Id = "3",
                    FirstName = "Furkan",
                    LastName = "Yüksel",
                    Education = "Python",
@@ -64,7 +64,7 @@ namespace BrightAkademie.Data.Concrete.EFCore.Configs
                },
                new Trainee
                {
-                   Id = 4,
+                   Id = "4",
                    FirstName = "Ali",
                    LastName = "Turan",
                    Education = "JavaScript",
@@ -73,7 +73,7 @@ namespace BrightAkademie.Data.Concrete.EFCore.Configs
                },
                new Trainee
                {
-                   Id = 5,
+                   Id = "5",
                    FirstName = "Mert",
                    LastName = "Tutkun",
                    Education = "C/C++",
@@ -82,7 +82,7 @@ namespace BrightAkademie.Data.Concrete.EFCore.Configs
                },
                new Trainee
                {
-                   Id = 6,
+                   Id = "6",
                    FirstName = "Alim",
                    LastName = "Yalçınkaya",
                    Education = "iOS & Android",
@@ -91,7 +91,7 @@ namespace BrightAkademie.Data.Concrete.EFCore.Configs
                },
                new Trainee
                {
-                   Id = 7,
+                   Id = "7",
                    FirstName = "Uğurcan",
                    LastName = "Çildiz",
                    Education = "Node.js",
@@ -100,7 +100,7 @@ namespace BrightAkademie.Data.Concrete.EFCore.Configs
                },
                new Trainee
                {
-                   Id = 8,
+                   Id = "8",
                    FirstName = "Rıdvan",
                    LastName = "Karakaya",
                    Education = "React",
