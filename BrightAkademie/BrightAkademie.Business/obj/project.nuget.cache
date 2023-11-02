@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "m55IPCdwN4WU3gII2BpOi+ttgOFhU7FtIVH6AYOBwm2yZURVxV79E0MwEwvKZMP3FiNkyx6IZ758iw0/Z20c0g==",
+  "dgSpecHash": "atOPPzAwvn99WkMh2vk8kwXx4uNhh87ootJnGLsCBdvSF2+6Q0XnfWy1vIyKpbuASI8YaSti38bWYUeCudwDzw==",
   "success": true,
-  "projectFilePath": "C:\\Git\\AspNet-Core-Web-API-React.js\\BrightAkademie\\BrightAkademie.Business\\BrightAkademie.Business.csproj",
+  "projectFilePath": "C:\\Users\\onrus\\Documents\\GitHub\\AspNet-Core-Web-API-React.js\\BrightAkademie\\BrightAkademie.Business\\BrightAkademie.Business.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\onrus\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\onrus\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

@@ -1590,11 +1590,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Git\\AspNet-Core-Web-API-React.js\\BrightAkademie\\BrightAkademie.Business\\BrightAkademie.Business.csproj",
+      "projectUniqueName": "C:\\Users\\onrus\\Documents\\GitHub\\AspNet-Core-Web-API-React.js\\BrightAkademie\\BrightAkademie.Business\\BrightAkademie.Business.csproj",
       "projectName": "BrightAkademie.Business",
-      "projectPath": "C:\\Git\\AspNet-Core-Web-API-React.js\\BrightAkademie\\BrightAkademie.Business\\BrightAkademie.Business.csproj",
+      "projectPath": "C:\\Users\\onrus\\Documents\\GitHub\\AspNet-Core-Web-API-React.js\\BrightAkademie\\BrightAkademie.Business\\BrightAkademie.Business.csproj",
       "packagesPath": "C:\\Users\\onrus\\.nuget\\packages\\",
-      "outputPath": "C:\\Git\\AspNet-Core-Web-API-React.js\\BrightAkademie\\BrightAkademie.Business\\obj\\",
+      "outputPath": "C:\\Users\\onrus\\Documents\\GitHub\\AspNet-Core-Web-API-React.js\\BrightAkademie\\BrightAkademie.Business\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\onrus\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1611,11 +1611,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Git\\AspNet-Core-Web-API-React.js\\BrightAkademie\\BrightAkademie.Data\\BrightAkademie.Data.csproj": {
-              "projectPath": "C:\\Git\\AspNet-Core-Web-API-React.js\\BrightAkademie\\BrightAkademie.Data\\BrightAkademie.Data.csproj"
+            "C:\\Users\\onrus\\Documents\\GitHub\\AspNet-Core-Web-API-React.js\\BrightAkademie\\BrightAkademie.Data\\BrightAkademie.Data.csproj": {
+              "projectPath": "C:\\Users\\onrus\\Documents\\GitHub\\AspNet-Core-Web-API-React.js\\BrightAkademie\\BrightAkademie.Data\\BrightAkademie.Data.csproj"
             },
-            "C:\\Git\\AspNet-Core-Web-API-React.js\\BrightAkademie\\BrightAkademie.Shared\\BrightAkademie.Shared.csproj": {
-              "projectPath": "C:\\Git\\AspNet-Core-Web-API-React.js\\BrightAkademie\\BrightAkademie.Shared\\BrightAkademie.Shared.csproj"
+            "C:\\Users\\onrus\\Documents\\GitHub\\AspNet-Core-Web-API-React.js\\BrightAkademie\\BrightAkademie.Shared\\BrightAkademie.Shared.csproj": {
+              "projectPath": "C:\\Users\\onrus\\Documents\\GitHub\\AspNet-Core-Web-API-React.js\\BrightAkademie\\BrightAkademie.Shared\\BrightAkademie.Shared.csproj"
             }
           }
         }
@@ -1651,7 +1651,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

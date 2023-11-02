@@ -192,8 +192,8 @@ namespace BrightAkademie.API.Controllers
         {
             #region Options
             Iyzipay.Options options = new Iyzipay.Options();
-          options.ApiKey = "sandbox-zuxmQFu5ros3UaU3ThbwDWKauRYyZWBW";
-            options.SecretKey = "sandbox-XUcyd9aubxKhPfCOVJhNnXqxTWFNfLvA";
+            options.ApiKey = "sandbox-uwuqFFt8Xz7qfKrUDikmwOzzSAQaCS9y";
+            options.SecretKey = "sandbox-PPY5wb5zl1zkfqB0RZF8bCYMRTvu3t3V";
             options.BaseUrl = "https://sandbox-api.iyzipay.com";
 
             #endregion

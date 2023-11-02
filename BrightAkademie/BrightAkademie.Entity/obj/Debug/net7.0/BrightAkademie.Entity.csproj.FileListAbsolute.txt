@@ -10,3 +10,15 @@ C:\Git\AspNet-Core-Web-API-React.js\BrightAkademie\BrightAkademie.Entity\obj\Deb
 C:\Git\AspNet-Core-Web-API-React.js\BrightAkademie\BrightAkademie.Entity\obj\Debug\net7.0\refint\BrightAkademie.Entity.dll
 C:\Git\AspNet-Core-Web-API-React.js\BrightAkademie\BrightAkademie.Entity\obj\Debug\net7.0\BrightAkademie.Entity.pdb
 C:\Git\AspNet-Core-Web-API-React.js\BrightAkademie\BrightAkademie.Entity\obj\Debug\net7.0\ref\BrightAkademie.Entity.dll
+C:\Users\onrus\Documents\GitHub\AspNet-Core-Web-API-React.js\BrightAkademie\BrightAkademie.Entity\bin\Debug\net7.0\BrightAkademie.Entity.deps.json
+C:\Users\onrus\Documents\GitHub\AspNet-Core-Web-API-React.js\BrightAkademie\BrightAkademie.Entity\bin\Debug\net7.0\BrightAkademie.Entity.dll
+C:\Users\onrus\Documents\GitHub\AspNet-Core-Web-API-React.js\BrightAkademie\BrightAkademie.Entity\bin\Debug\net7.0\BrightAkademie.Entity.pdb
+C:\Users\onrus\Documents\GitHub\AspNet-Core-Web-API-React.js\BrightAkademie\BrightAkademie.Entity\obj\Debug\net7.0\BrightAkademie.Entity.csproj.AssemblyReference.cache
+C:\Users\onrus\Documents\GitHub\AspNet-Core-Web-API-React.js\BrightAkademie\BrightAkademie.Entity\obj\Debug\net7.0\BrightAkademie.Entity.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\onrus\Documents\GitHub\AspNet-Core-Web-API-React.js\BrightAkademie\BrightAkademie.Entity\obj\Debug\net7.0\BrightAkademie.Entity.AssemblyInfoInputs.cache
+C:\Users\onrus\Documents\GitHub\AspNet-Core-Web-API-React.js\BrightAkademie\BrightAkademie.Entity\obj\Debug\net7.0\BrightAkademie.Entity.AssemblyInfo.cs
+C:\Users\onrus\Documents\GitHub\AspNet-Core-Web-API-React.js\BrightAkademie\BrightAkademie.Entity\obj\Debug\net7.0\BrightAkademie.Entity.csproj.CoreCompileInputs.cache
+C:\Users\onrus\Documents\GitHub\AspNet-Core-Web-API-React.js\BrightAkademie\BrightAkademie.Entity\obj\Debug\net7.0\BrightAkademie.Entity.dll
+C:\Users\onrus\Documents\GitHub\AspNet-Core-Web-API-React.js\BrightAkademie\BrightAkademie.Entity\obj\Debug\net7.0\refint\BrightAkademie.Entity.dll
+C:\Users\onrus\Documents\GitHub\AspNet-Core-Web-API-React.js\BrightAkademie\BrightAkademie.Entity\obj\Debug\net7.0\BrightAkademie.Entity.pdb
+C:\Users\onrus\Documents\GitHub\AspNet-Core-Web-API-React.js\BrightAkademie\BrightAkademie.Entity\obj\Debug\net7.0\ref\BrightAkademie.Entity.dll
